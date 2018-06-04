@@ -3,15 +3,15 @@ const React = require('react');
 const reactDOM = require('react-dom');
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
 
     };
   }
   render() {
     return (
-      <div>Hello world</div>
+      <div>DARYL LIIIII</div>
     );
   }
 }
