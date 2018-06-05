@@ -9,7 +9,7 @@ class Save extends React.Component {
   render() {
     return (
       <div>
-        <input type="button" value="SAVE"/>
+        <input type="button" value="SAVE" />
       </div>
     );
   }
