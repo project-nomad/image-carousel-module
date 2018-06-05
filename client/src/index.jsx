@@ -8,8 +8,12 @@ const reactDOM = require('react-dom');
 
 const AppStyle = {
   width: '100%',
-  height: '600px',
+  height: '300px',
   backgroundImage: `url(${'https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/room1.jpg'})`,
+  'border-style': 'solid',
+  'border-width': '2px',
+  'background-repeat': 'no-repeat',
+  'background-size': 'cover',
 };
 
 const SaveStyle = {
@@ -21,16 +25,16 @@ const SaveStyle = {
 
 const ViewPhotosStyle = {
   position: 'absolute',
-  right: '-88%',
-  height: '50px',
   width: '100%',
+  right: '-3%',
+  bottom: '65%',
 };
 
 const ShareStyle = {
   position: 'absolute',
+  right: '-90%',
+  height: '50px',
   width: '100%',
-  right: '-3%',
-  bottom: '30%',
 };
 
 class App extends React.Component {
@@ -43,7 +47,6 @@ class App extends React.Component {
   render() {
     return (
       <div style={AppStyle}>
-        <div>Image Carousel</div>
         <div style={SaveStyle}>
           <Save />
         </div>
