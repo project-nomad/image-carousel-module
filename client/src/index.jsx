@@ -1,19 +1,26 @@
 import Save from './components/Save.jsx';
 import ViewPhotos from './components/ViewPhotos.jsx';
-import Share from './components/Share.jsx'
+import Share from './components/Share.jsx';
 
 const React = require('react');
 
 const reactDOM = require('react-dom');
 
+const axios = require('axios');
+
+// will have to make this background image a img tag evetually
 const AppStyle = {
+  margin: 'auto',
+  maxWidth: '100%',
+  overflow: 'hidden',
   width: '100%',
-  height: '300px',
-  backgroundImage: `url(${'https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/room1.jpg'})`,
-  'border-style': 'solid',
-  'border-width': '2px',
-  'background-repeat': 'no-repeat',
-  'background-size': 'cover',
+  height: '600px',
+  backgroundImage: `url(${'https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/room45.jpg'})`,
+  borderStyle: 'solid',
+  borderWidth: '2px',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  borderColor: 'grey',
 };
 
 const SaveStyle = {
@@ -27,7 +34,7 @@ const ViewPhotosStyle = {
   position: 'absolute',
   width: '100%',
   right: '-3%',
-  bottom: '65%',
+  bottom: '30%',
 };
 
 const ShareStyle = {
@@ -44,6 +51,19 @@ class App extends React.Component {
 
     };
   }
+  componentDidMount() {
+    axios.get('/listings/listingId/5').then((response) => {
+      console.log(response.data);
+    }).catch((error) => {
+      console.log('we didnt send the request', error);
+    });
+    axios.get('listings/listingId/5/pictures').then((response) => {
+      console.log(response.data);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
   render() {
     return (
       <div style={AppStyle}>
