@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get('/listings/listingId/:listingId', (req, res) => {
   db.getListingData(req.params.listingId, (err, listingData) => {
     if (err) {
-      res.send('error in getting data from db', err);
+      res.status(404).send('error in getting data from db', err);
     } else if (listingData) {
       res.status(200).send(listingData);
     }
@@ -21,7 +21,7 @@ app.get('/listings/listingId/:listingId', (req, res) => {
 app.get('/listings/listingId/:listingId/pictures', (req, res) => {
   db.getPictureData(req.params.listingId, (err, pictureData) => {
     if (err) {
-      res.send('error retrieving photos from database', err);
+      res.status(404).send('error retrieving photos from database', err);
     } else if (pictureData) {
       res.status(200).send(pictureData);
     }
