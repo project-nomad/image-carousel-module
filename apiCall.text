@@ -1,0 +1,49 @@
+GET /listings/listingId/5
+
+response:
+
+{
+  id: 5,
+  name: "listing5"
+}
+
+GET listings/listingId/5/pictures
+[
+    {id: 8, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/room16.jpeg"}
+    ,
+    {id: 32, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/room38.jpeg"}
+    ,
+    {id: 50, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/room9.jpg"}
+    ,
+    {id: 67, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/22.jpeg"}
+    ,
+    {id: 70, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/25.jpg"}
+    ,
+    {id: 78, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/32.jpeg"}
+    ,
+    {id: 89, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/42.jpeg"}
+    ,
+    {id: 92, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/45.jpeg"}
+    ,
+    {id: 107, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/59.jpeg"}
+    ,
+    {id: 110, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/61.jpeg"}
+    ,
+    {id: 113, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/64.JPG"}
+    ,
+    {id: 118, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/69.jpeg"}
+    ,
+    {id: 125, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/75.jpeg"}
+    ,
+    {id: 126, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/76.jpeg"}
+    ,
+    {id: 131, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/80.jpeg"}
+    ,
+    {id: 135, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/84.jpeg"}
+    ,
+    {id: 138, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/87.jpeg"}
+    ,
+    {id: 139, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/88.jpeg"}
+    ,
+    {id: 149, listing_id: 5, caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", verifiablePhoto: 1, src: "https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/97.jpg"}
+]

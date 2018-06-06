@@ -1,11 +1,6 @@
-const express = require('express');
+const app = require('./app.js');
 
-const path = require('path');
 
-const app = express();
-
-app.use(express.static(path.resolve(`${__dirname}`, 'public')));
-
-app.listen(3004, () => console.log('Listening on port 3004'));
-app.get('/', (req, res) => res.send());
-
+app.listen(3004, () => {
+  console.log('Example App listening on port 3004');
+});
