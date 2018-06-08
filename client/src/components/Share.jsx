@@ -1,9 +1,9 @@
 const React = require('react');
 
-const Share = () => {
+const Share = (props) => {
   return (
     <div>
-      <input type="button" value="Share" />
+      <input type="button" value="Share" onClick={props.click} />
     </div>
   );
 };

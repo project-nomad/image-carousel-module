@@ -1,10 +1,11 @@
 const React = require('react');
 
 
-const ViewPhotos = () => {
+const ViewPhotos = (props) => {
+
   return (
     <div>
-      <input type="button" value="ViewPhotos" />
+      <input type="button" id="VIEW PHOTOS" value="ViewPhotos" onClick={props.click} />
     </div>
   );
 };

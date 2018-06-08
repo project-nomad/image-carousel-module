@@ -1,6 +1,4 @@
-import Save from './components/Save.jsx';
-import ViewPhotos from './components/ViewPhotos.jsx';
-import Share from './components/Share.jsx';
+import ModalConductor from './components/ModalConductor.jsx';
 
 const React = require('react');
 
@@ -23,42 +21,29 @@ const AppStyle = {
   borderColor: 'grey',
 };
 
-const SaveStyle = {
-  position: 'absolute',
-  right: '-95%',
-  height: '50px',
-  width: '100%',
-};
-
-const ViewPhotosStyle = {
-  position: 'absolute',
-  width: '100%',
-  right: '-3%',
-  bottom: '30%',
-};
-
-const ShareStyle = {
-  position: 'absolute',
-  right: '-90%',
-  height: '50px',
-  width: '100%',
-};
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      listingName: null,
+      currentPictures: [],
     };
   }
   componentDidMount() {
     axios.get('/listings/listingId/5').then((response) => {
-      console.log(response.data);
+      this.setState({
+        listingName: response.data[0].name,
+      });
+      console.log(this.state.listingName);
     }).catch((error) => {
       console.log('we didnt send the request', error);
     });
     axios.get('listings/listingId/5/pictures').then((response) => {
-      console.log(response.data);
+      this.setState({
+        currentPictures: response.data,
+      });
+      console.log(this.state.currentPictures);
     }).catch((error) => {
       console.log(error);
     });
@@ -67,15 +52,7 @@ class App extends React.Component {
   render() {
     return (
       <div style={AppStyle}>
-        <div style={SaveStyle}>
-          <Save />
-        </div>
-        <div style={ViewPhotosStyle}>
-          <ViewPhotos />
-        </div>
-        <div style={ShareStyle}>
-          <Share />
-        </div>
+        <ModalConductor />
 
       </div>
     );
