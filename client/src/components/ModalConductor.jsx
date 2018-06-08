@@ -16,6 +16,13 @@ const SaveStyle = {
   bottom: '90%',
 };
 
+const ExitStyle = {
+  position: 'absolute',
+  width: '100%',
+  right: '-3%',
+  bottom: '90%',
+};
+
 const ViewPhotosStyle = {
   position: 'absolute',
   width: '100%',
@@ -47,12 +54,14 @@ class ModalConductor extends React.Component {
     this.setState({
       currentModal: E.target.value,
     }, function () {
-      this.openModal()
+      this.openModal();
     });
   }
   handleExitClick() {
     this.setState({
       currentModal: null,
+    }, function (){
+      this.closeModal();
     });
   }
   openModal() {
@@ -75,6 +84,9 @@ class ModalConductor extends React.Component {
     return (
       <div>
         {modalChoice}
+        <div style={ExitStyle}>
+          <input type="button" onClick={this.handleExitClick} value="exit" />
+        </div>
         <div style={SaveStyle}>
           <Save click={this.handleModalClick} />
         </div>

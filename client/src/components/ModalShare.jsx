@@ -39,9 +39,6 @@ class ModalShare extends React.Component {
         <div style={ModalStyle}>
           Share details go here!
         </div>
-        <div>
-          <input type="button" onClick={this.props.close} />
-        </div>
         <div style={backDropStyle}>
 
         </div>
