@@ -10,11 +10,14 @@ class ModalShare extends React.Component {
     }
 
     const ModalStyle = {
+      borderStyle: 'solid',
       position: 'absolute',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      background: '#fff',
+      width: '400px',
+      height: '350px',
+      background: 'rgb(255,255,255)',
     };
     if (this.props.width && this.prop.height) {
       ModalStyle.width = this.props.width;
@@ -36,11 +39,23 @@ class ModalShare extends React.Component {
 
     return (
       <div>
+        <div style={backDropStyle}></div>
         <div style={ModalStyle}>
-          Share details go here!
-        </div>
-        <div style={backDropStyle}>
-
+          <h1>SHARE</h1>
+          <p> Check out this awesome listing on Airbnb: {this.props.name} </p>
+          <hr/>
+          <a href="https://www.facebook.com/" >FACEBOOK</a>
+          <hr/>
+          <a href="https://www.twitter.com/" >TWITTER</a>
+          <hr/>
+          <a href="https://www.gmail.com/" >GMAIL</a>
+          <hr/>
+          <a href="https://www.facebook.com/" >MESSENGER</a>
+          <hr/>
+          <a href="https://www.facebook.com/" >COPY LINK</a>
+          <hr/>
+          <a href="https://www.facebook.com/" >EMBED</a>
+          <hr/>
         </div>
 
       </div>

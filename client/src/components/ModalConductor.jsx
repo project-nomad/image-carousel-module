@@ -79,14 +79,10 @@ class ModalConductor extends React.Component {
   render() {
     let modalChoice = <div></div>;
     if (this.state.isModalOpen === true && this.state.currentModal === 'Share') {
-      modalChoice = <ModalShare close={this.handleExitClick} />;
+      modalChoice = <ModalShare close={this.handleExitClick} name={this.props.name} />;
     }
     return (
       <div>
-        {modalChoice}
-        <div style={ExitStyle}>
-          <input type="button" onClick={this.handleExitClick} value="exit" />
-        </div>
         <div style={SaveStyle}>
           <Save click={this.handleModalClick} />
         </div>
@@ -95,6 +91,10 @@ class ModalConductor extends React.Component {
         </div>
         <div style={ShareStyle} >
           <Share click={this.handleModalClick} />
+        </div>
+        {modalChoice}
+        <div style={ExitStyle}>
+          <input type="button" onClick={this.handleExitClick} value="exit" />
         </div>
       </div>
     );

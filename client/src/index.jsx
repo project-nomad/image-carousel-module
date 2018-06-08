@@ -52,7 +52,7 @@ class App extends React.Component {
   render() {
     return (
       <div style={AppStyle}>
-        <ModalConductor />
+        <ModalConductor name={this.state.listingName}/>
 
       </div>
     );
