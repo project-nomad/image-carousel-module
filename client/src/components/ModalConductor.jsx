@@ -8,6 +8,8 @@ import Share from './Share.jsx';
 
 import ModalShare from './ModalShare.jsx';
 
+import ModalSave from './ModalSave.jsx'
+
 const SaveStyle = {
   position: 'absolute',
   right: '-85%',
@@ -77,20 +79,22 @@ class ModalConductor extends React.Component {
 
 
   render() {
-    let modalChoice = <div></div>;
+    let modalChoice = null;
     if (this.state.isModalOpen === true && this.state.currentModal === 'Share') {
-      modalChoice = <ModalShare close={this.handleExitClick} name={this.props.name} />;
+      modalChoice = <ModalShare name={this.props.name} />;
+    } else if (this.state.isModalOpen === true && this.state.currentModal === 'Save'){
+        modalChoice = <ModalSave />;
     }
     return (
       <div>
-        <div style={SaveStyle}>
-          <Save click={this.handleModalClick} />
-        </div>
         <div style={ViewPhotosStyle}>
           <ViewPhotos click={this.handleModalClick} />
         </div>
         <div style={ShareStyle} >
           <Share click={this.handleModalClick} />
+        </div>
+        <div style={SaveStyle}>
+          <Save click={this.handleModalClick} />
         </div>
         {modalChoice}
         <div style={ExitStyle}>
