@@ -63,5 +63,5 @@ class ModalShare extends React.Component {
   }
 }
 
-export default ModalShare
+export default ModalShare;
 

@@ -1,21 +1,24 @@
 import React from 'react';
 
-const ModalSave = (props) => {
+import Carousel from './ViewPhotosCarousel/Carousel.jsx';
 
-  if(props.isOpen === false){
-    return null
+
+const ModalViewPhotos = (props) => {
+  // will eventually pass down the array of objects
+  if (props.isOpen === false) {
+    return null;
   }
-
   const ModalStyle = {
     borderStyle: 'solid',
     position: 'absolute',
-    top: '50%',
+    top: '40%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '400px',
-    height: '350px',
+    width: '500px',
+    height: '400px',
     background: 'rgb(255,255,255)',
   };
+
   const backDropStyle = {
     position: 'absolute',
     width: '100%',
@@ -24,23 +27,14 @@ const ModalSave = (props) => {
     left: '0px',
     background: 'rgba(0,0,0,0.3)',
   };
-
   return (
     <div>
       <div style={backDropStyle}></div>
       <div style={ModalStyle}>
-      <h2> Save To List </h2>
-      <br/>
-        <input type="input" placeholder="Name your list" borderStyle="solid" /> <br/>
-      <input type="button" value="CANCEL" />
-      <input type="button" value="CREATE" />
+        <Carousel currentPictures={props.currentPictures} />
       </div>
     </div>
-  )
+  );
+};
 
-}
-
-
-
-
-export default ModalSave;
+export default ModalViewPhotos;

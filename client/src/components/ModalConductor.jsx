@@ -6,23 +6,26 @@ import ViewPhotos from './ViewPhotos.jsx';
 
 import Share from './Share.jsx';
 
-import ModalShare from './ModalShare.jsx';
+import ModalShare from './ModalComponents/ModalShare.jsx';
 
-import ModalSave from './ModalSave.jsx'
+import ModalSave from './ModalComponents/ModalSave.jsx';
+
+import ModalViewPhotos from './ModalComponents/ModalViewPhotos.jsx';
 
 const SaveStyle = {
-  position: 'absolute',
-  right: '-85%',
+  position: 'fixed',
+  right: '-90%',
   height: '40px',
   width: '100%',
   bottom: '90%',
 };
 
 const ExitStyle = {
+  right: '-97%',
+  color: 'white',
   position: 'absolute',
   width: '100%',
-  right: '-3%',
-  bottom: '90%',
+  bottom: '95%',
 };
 
 const ViewPhotosStyle = {
@@ -33,10 +36,11 @@ const ViewPhotosStyle = {
 };
 
 const ShareStyle = {
-  position: 'absolute',
-  right: '-80%',
-  height: '50px',
+  position: 'fixed',
+  right: '-90%',
+  height: '40px',
   width: '100%',
+  top: '10%',
 };
 
 
@@ -62,7 +66,7 @@ class ModalConductor extends React.Component {
   handleExitClick() {
     this.setState({
       currentModal: null,
-    }, function (){
+    }, function () {
       this.closeModal();
     });
   }
@@ -77,13 +81,16 @@ class ModalConductor extends React.Component {
     });
   }
 
-
   render() {
     let modalChoice = null;
     if (this.state.isModalOpen === true && this.state.currentModal === 'Share') {
       modalChoice = <ModalShare name={this.props.name} />;
-    } else if (this.state.isModalOpen === true && this.state.currentModal === 'Save'){
-        modalChoice = <ModalSave />;
+    } else if (this.state.isModalOpen === true && this.state.currentModal === 'Save') {
+      modalChoice = <ModalSave />;
+    } else if (this.state.isModalOpen === true && this.state.currentModal === 'ViewPhotos') {
+      modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
+    } else if (this.props.backgroundClicked === true) {
+      modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     }
     return (
       <div>
@@ -97,8 +104,8 @@ class ModalConductor extends React.Component {
           <Save click={this.handleModalClick} />
         </div>
         {modalChoice}
-        <div style={ExitStyle}>
-          <input type="button" onClick={this.handleExitClick} value="exit" />
+        <div style={ExitStyle} onClick={this.handleExitClick} value="exit">
+          X
         </div>
       </div>
     );

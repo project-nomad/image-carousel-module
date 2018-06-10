@@ -28,7 +28,9 @@ class App extends React.Component {
     this.state = {
       listingName: null,
       currentPictures: [],
+      backGroundwasClicked: false,
     };
+    this.handleBackgroundClick = this.handleBackgroundClick.bind(this)
   }
   componentDidMount() {
     axios.get('/listings/listingId/5').then((response) => {
@@ -49,10 +51,27 @@ class App extends React.Component {
     });
   }
 
+  handleBackgroundClick(E) {
+    console.log('I got clicked!!');
+    if (this.state.backGroundwasClicked === false) {
+      this.setState({
+        backGroundwasClicked: true,
+      });
+    } else if (this.state.backGroundwasClicked === true) {
+      this.setState({
+        backGroundwasClicked: false,
+      });
+    }
+  }
+
   render() {
     return (
-      <div style={AppStyle}>
-        <ModalConductor name={this.state.listingName}/>
+      <div style={AppStyle} onClick={this.handleBackgroundClick}>
+        <ModalConductor
+          name={this.state.listingName}
+          currentPictures={this.state.currentPictures}
+          backgroundClicked={this.state.backGroundwasClicked}
+        />
 
       </div>
     );
