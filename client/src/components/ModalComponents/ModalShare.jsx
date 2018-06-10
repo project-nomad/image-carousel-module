@@ -44,17 +44,17 @@ class ModalShare extends React.Component {
           <h1>SHARE</h1>
           <p> Check out this awesome listing on Airbnb: {this.props.name} </p>
           <hr/>
-          <a href="https://www.facebook.com/" >FACEBOOK</a>
+          <a href="https://www.facebook.com/" >&#10765;    FACEBOOK</a>
           <hr/>
-          <a href="https://www.twitter.com/" >TWITTER</a>
+          <a href="https://www.twitter.com/" >&#128038;  TWITTER</a>
           <hr/>
-          <a href="https://www.gmail.com/" >GMAIL</a>
+          <a href="https://www.gmail.com/" >&#120126;  GMAIL</a>
           <hr/>
-          <a href="https://www.facebook.com/" >MESSENGER</a>
+          <a href="https://www.facebook.com/" >&#9889;  MESSENGER</a>
           <hr/>
-          <a href="https://www.facebook.com/" >COPY LINK</a>
+          <a href="https://www.facebook.com/" >&#169;  COPY LINK</a>
           <hr/>
-          <a href="https://www.facebook.com/" >EMBED</a>
+          <a href="https://www.facebook.com/" >&#8826;&#8725;&#8827; EMBED</a>
           <hr/>
         </div>
 
