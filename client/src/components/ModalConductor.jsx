@@ -13,7 +13,7 @@ import ModalSave from './ModalComponents/ModalSave.jsx';
 import ModalViewPhotos from './ModalComponents/ModalViewPhotos.jsx';
 
 const SaveStyle = {
-  position: 'fixed',
+  position: 'absolute',
   right: '-90%',
   height: '40px',
   width: '100%',
@@ -36,7 +36,7 @@ const ViewPhotosStyle = {
 };
 
 const ShareStyle = {
-  position: 'fixed',
+  position: 'absolute',
   right: '-90%',
   height: '40px',
   width: '100%',
