@@ -33,7 +33,7 @@ class App extends React.Component {
     this.handleBackgroundClick = this.handleBackgroundClick.bind(this);
   }
   componentDidMount() {
-    axios.get('/listings/listingId/5').then((response) => {
+    axios.get('/listings/5').then((response) => {
       this.setState({
         listingName: response.data[0].name,
       });
@@ -41,7 +41,7 @@ class App extends React.Component {
     }).catch((error) => {
       console.log('we didnt send the request', error);
     });
-    axios.get('listings/listingId/5/pictures').then((response) => {
+    axios.get('listings/5/pictures').then((response) => {
       this.setState({
         currentPictures: response.data,
       });
@@ -51,8 +51,7 @@ class App extends React.Component {
     });
   }
 
-  handleBackgroundClick(E) {
-    console.log('I got clicked!!');
+  handleBackgroundClick() {
     if (this.state.backGroundwasClicked === false) {
       this.setState({
         backGroundwasClicked: true,
