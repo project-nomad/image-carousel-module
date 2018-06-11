@@ -20,6 +20,7 @@
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.1",
     "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
     "jest": "^23.1.0",
     "jest-cli": "^23.1.0",
     "jest-enzyme": "^6.0.1",
@@ -30,7 +31,10 @@
     "path": "^0.12.7",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-fontawesome": "^1.6.1",
+    "react-icons": "^2.2.7",
     "serve-webpack-client": "0.0.4",
+    "simple-flexbox": "^1.2.0",
     "superagent": "^3.8.3",
     "supertest": "^3.1.0",
     "webpack-cli": "^2.1.5"

@@ -32,7 +32,7 @@ const ViewPhotosStyle = {
   position: 'absolute',
   width: '100%',
   right: '-3%',
-  bottom: '45%',
+  bottom: '35%',
 };
 
 const ShareStyle = {

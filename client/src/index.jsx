@@ -42,11 +42,11 @@ class App extends React.Component {
     this.getCurrentUrl();
   }
 
-  getData(id) {
-    console.log(this.state.currentId)
+  getData() {
     axios.get('/listings/4').then((response) => {
       this.setState({
         listingName: response.data[0].name,
+        currentId: response.data[0].id,
       });
       console.log(this.state.listingName);
     }).catch((error) => {
@@ -63,7 +63,7 @@ class App extends React.Component {
   }
 
   getCurrentUrl() {
-    const urlArray = window.location.href.split(':');
+    const urlArray = window.location.href.split('/');
     const id = urlArray[urlArray.length - 1];
     this.setState({
       currentId: id,
