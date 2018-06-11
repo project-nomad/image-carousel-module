@@ -32,7 +32,7 @@ const ViewPhotosStyle = {
   position: 'absolute',
   width: '100%',
   right: '-3%',
-  bottom: '30%',
+  bottom: '45%',
 };
 
 const ShareStyle = {
@@ -56,9 +56,9 @@ class ModalConductor extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleExitClick = this.handleExitClick.bind(this);
   }
-  handleModalClick(E) {
+  handleModalClick(e) {
     this.setState({
-      currentModal: E.target.value,
+      currentModal: e.target.value,
     }, function () {
       this.openModal();
     });

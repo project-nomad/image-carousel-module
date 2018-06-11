@@ -11,10 +11,10 @@ const ModalViewPhotos = (props) => {
   const ModalStyle = {
     borderStyle: 'solid',
     position: 'absolute',
-    top: '40%',
+    top: '35%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '500px',
+    width: '800px',
     height: '400px',
     background: 'rgb(255,255,255)',
   };

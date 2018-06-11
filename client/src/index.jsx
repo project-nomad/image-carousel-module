@@ -15,10 +15,11 @@ const AppStyle = {
   height: '600px',
   backgroundImage: `url(${'https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/room45.jpg'})`,
   borderStyle: 'solid',
-  borderWidth: '2px',
+  borderWidth: '5px',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   borderColor: 'grey',
+  backgroundPosition: 'center bottom',
 };
 
 
@@ -29,11 +30,21 @@ class App extends React.Component {
       listingName: null,
       currentPictures: [],
       backGroundwasClicked: false,
+      currentId: null,
     };
+    this.getData = this.getData.bind(this);
     this.handleBackgroundClick = this.handleBackgroundClick.bind(this);
+    this.getCurrentUrl = this.getCurrentUrl.bind(this);
   }
+
+
   componentDidMount() {
-    axios.get('/listings/5').then((response) => {
+    this.getCurrentUrl();
+  }
+
+  getData(id) {
+    console.log(this.state.currentId)
+    axios.get('/listings/4').then((response) => {
       this.setState({
         listingName: response.data[0].name,
       });
@@ -41,7 +52,7 @@ class App extends React.Component {
     }).catch((error) => {
       console.log('we didnt send the request', error);
     });
-    axios.get('listings/5/pictures').then((response) => {
+    axios.get('/listings/4/pictures').then((response) => {
       this.setState({
         currentPictures: response.data,
       });
@@ -49,6 +60,14 @@ class App extends React.Component {
     }).catch((error) => {
       console.log(error);
     });
+  }
+
+  getCurrentUrl() {
+    const urlArray = window.location.href.split(':');
+    const id = urlArray[urlArray.length - 1];
+    this.setState({
+      currentId: id,
+    }, this.getData());
   }
 
   handleBackgroundClick() {
