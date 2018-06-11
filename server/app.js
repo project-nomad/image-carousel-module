@@ -8,7 +8,7 @@ const db = require('../database-mysql/index.js');
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/listings/listingId/:listingId', (req, res) => {
+app.get('/listings/:listingId', (req, res) => {
   db.getListingData(req.params.listingId, (err, listingData) => {
     if (err) {
       res.status(404).send('error in getting data from db', err);
@@ -18,7 +18,7 @@ app.get('/listings/listingId/:listingId', (req, res) => {
   });
 });
 
-app.get('/listings/listingId/:listingId/pictures', (req, res) => {
+app.get('/listings/:listingId/pictures', (req, res) => {
   db.getPictureData(req.params.listingId, (err, pictureData) => {
     if (err) {
       res.status(404).send('error retrieving photos from database', err);

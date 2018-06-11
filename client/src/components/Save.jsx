@@ -1,19 +1,16 @@
 const React = require('react');
 
-class Save extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-  render() {
-    return (
-      <div>
-        <input type="button" value="SAVE" />
-      </div>
-    );
-  }
-}
+const buttonStyle = {
+  width: '90px',
+  color: 'white',
+};
 
+const Save = (props) => {
+  return (
+    <div style={buttonStyle}>
+     &#9825; <input type="button" value="Save" onClick={props.click} />
+    </div>
+  );
+};
 
 export default Save;
