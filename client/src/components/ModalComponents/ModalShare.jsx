@@ -1,5 +1,7 @@
 import React from 'react';
 
+const FontAwesome = require('react-fontawesome');
+
 class ModalShare extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,7 @@ class ModalShare extends React.Component {
       left: '50%',
       transform: 'translate(-50%, -50%)',
       width: '400px',
-      height: '350px',
+      height: '550px',
       background: 'rgb(255,255,255)',
     };
     if (this.props.width && this.prop.height) {
@@ -41,21 +43,79 @@ class ModalShare extends React.Component {
       <div>
         <div style={backDropStyle}></div>
         <div style={ModalStyle}>
-          <h1>SHARE</h1>
+          <h3>SHARE</h3>
           <p> Check out this awesome listing on Airbnb: {this.props.name} </p>
           <hr/>
-          <a href="https://www.facebook.com/" >&#10765;    FACEBOOK</a>
-          <hr/>
-          <a href="https://www.twitter.com/" >&#128038;  TWITTER</a>
-          <hr/>
-          <a href="https://www.gmail.com/" >&#120126;  GMAIL</a>
-          <hr/>
-          <a href="https://www.facebook.com/" >&#9889;  MESSENGER</a>
-          <hr/>
-          <a href="https://www.facebook.com/" >&#169;  COPY LINK</a>
-          <hr/>
+          <div>
+            <a href="https://www.facebook.com/" >
+              <FontAwesome
+                className="fab fa-facebook-square"
+                name="facebook"
+                size="2x"
+                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+              />
+              FACEBOOK
+            </a>
+          </div>
+          <br/>
+          <hr />
+          <br/>
+          <div>
+            <a href="https://www.twitter.com/" >
+              <FontAwesome
+                className="fab fa-twitter"
+                name="twitter"
+                size="2x"
+                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+              />
+              TWITTER
+            </a>
+          </div>
+          <br/>
+          <hr />
+          <br/>
+          <div>
+            <a href="https://www.gmail.com/" >
+              <FontAwesome
+                className="fab fa-google"
+                name="google"
+                size="2x"
+                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+              />
+             GMAIL
+            </a>
+          </div>
+          <br/>
+          <hr />
+          <br/>
+          <div>
+            <a href="https://www.facebook.com/" >
+              <FontAwesome
+                className="fab fa-facebook-square"
+                size="2x"
+                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+              />
+              MESSENGER
+            </a>
+          </div>
+          <br/>
+          <hr />
+          <br/>
+          <a href="https://www.facebook.com/" >
+            <FontAwesome
+              className="fas fa-copy"
+              size="2x"
+              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+            />
+            COPY LINK
+          </a>
+          <br/>
+          <hr />
+          <br/>
           <a href="https://www.facebook.com/" >&#8826;&#8725;&#8827; EMBED</a>
-          <hr/>
+          <br/>
+          <hr />
+          <br/>
         </div>
 
       </div>

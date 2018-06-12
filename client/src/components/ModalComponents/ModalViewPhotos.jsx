@@ -11,7 +11,7 @@ const ModalViewPhotos = (props) => {
   const ModalStyle = {
     borderStyle: 'solid',
     position: 'absolute',
-    top: '35%',
+    top: '40%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: '800px',
@@ -27,6 +27,7 @@ const ModalViewPhotos = (props) => {
     left: '0px',
     background: 'rgba(0,0,0,0.3)',
   };
+
   return (
     <div>
       <div style={backDropStyle}></div>

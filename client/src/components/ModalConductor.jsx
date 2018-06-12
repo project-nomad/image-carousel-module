@@ -12,37 +12,37 @@ import ModalSave from './ModalComponents/ModalSave.jsx';
 
 import ModalViewPhotos from './ModalComponents/ModalViewPhotos.jsx';
 
+
 const SaveStyle = {
   position: 'absolute',
-  right: '-90%',
-  height: '40px',
-  width: '100%',
-  bottom: '90%',
-};
-
-const ExitStyle = {
-  right: '-97%',
-  color: 'white',
-  position: 'absolute',
-  width: '100%',
-  bottom: '95%',
-};
-
-const ViewPhotosStyle = {
-  position: 'absolute',
-  width: '100%',
-  right: '-3%',
-  bottom: '45%',
+  right: '10%',
+  height: '60px',
+  width: '80px',
+  bottom: '85%',
 };
 
 const ShareStyle = {
   position: 'absolute',
-  right: '-90%',
-  height: '40px',
-  width: '100%',
-  top: '10%',
+  right: '4%',
+  height: '60px',
+  width: '80px',
+  bottom: '85%',
 };
 
+const ExitStyle = {
+  color: 'white',
+  position: 'absolute',
+  width: '40px',
+  bottom: '95%',
+  right: '1%',
+};
+
+const ViewPhotosStyle = {
+  position: 'absolute',
+  width: '5%',
+  right: '93%',
+  bottom: '35%',
+};
 
 class ModalConductor extends React.Component {
   constructor(props) {
@@ -93,7 +93,7 @@ class ModalConductor extends React.Component {
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     }
     return (
-      <div>
+      <div width="100%" position="absolute">
         <div style={ViewPhotosStyle}>
           <ViewPhotos click={this.handleModalClick} />
         </div>
