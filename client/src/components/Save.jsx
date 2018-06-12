@@ -26,8 +26,11 @@ class Save extends React.Component {
       className="far fa-heart"
       name="heart"
       size="lg"
-      style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+      // style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
     />);
+    if(this.state.saveIconWasClicked === true){
+
+    }
 
     return (
       <div style={buttonStyle}>
@@ -36,7 +39,7 @@ class Save extends React.Component {
           value="Save"
           onClick={this.props.click}
         >
-        {saveIcon}
+          {saveIcon}
         SAVE
         </button>
       </div>

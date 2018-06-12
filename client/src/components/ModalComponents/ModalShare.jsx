@@ -18,7 +18,7 @@ class ModalShare extends React.Component {
       left: '50%',
       transform: 'translate(-50%, -50%)',
       width: '400px',
-      height: '400px',
+      height: '550px',
       background: 'rgb(255,255,255)',
     };
     if (this.props.width && this.prop.height) {
@@ -43,7 +43,7 @@ class ModalShare extends React.Component {
       <div>
         <div style={backDropStyle}></div>
         <div style={ModalStyle}>
-          <h1>SHARE</h1>
+          <h3>SHARE</h3>
           <p> Check out this awesome listing on Airbnb: {this.props.name} </p>
           <hr/>
           <div>
@@ -57,7 +57,9 @@ class ModalShare extends React.Component {
               FACEBOOK
             </a>
           </div>
+          <br/>
           <hr />
+          <br/>
           <div>
             <a href="https://www.twitter.com/" >
               <FontAwesome
@@ -69,7 +71,9 @@ class ModalShare extends React.Component {
               TWITTER
             </a>
           </div>
+          <br/>
           <hr />
+          <br/>
           <div>
             <a href="https://www.gmail.com/" >
               <FontAwesome
@@ -81,7 +85,9 @@ class ModalShare extends React.Component {
              GMAIL
             </a>
           </div>
+          <br/>
           <hr />
+          <br/>
           <div>
             <a href="https://www.facebook.com/" >
               <FontAwesome
@@ -92,7 +98,9 @@ class ModalShare extends React.Component {
               MESSENGER
             </a>
           </div>
+          <br/>
           <hr />
+          <br/>
           <a href="https://www.facebook.com/" >
             <FontAwesome
               className="fas fa-copy"
@@ -101,9 +109,13 @@ class ModalShare extends React.Component {
             />
             COPY LINK
           </a>
+          <br/>
           <hr />
+          <br/>
           <a href="https://www.facebook.com/" >&#8826;&#8725;&#8827; EMBED</a>
+          <br/>
           <hr />
+          <br/>
         </div>
 
       </div>

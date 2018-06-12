@@ -30,17 +30,17 @@ const ShareStyle = {
 };
 
 const ExitStyle = {
-  right: '1%',
   color: 'white',
   position: 'absolute',
   width: '40px',
   bottom: '95%',
+  right: '1%',
 };
 
 const ViewPhotosStyle = {
   position: 'absolute',
-  width: '100%',
-  right: '-3%',
+  width: '5%',
+  right: '93%',
   bottom: '35%',
 };
 

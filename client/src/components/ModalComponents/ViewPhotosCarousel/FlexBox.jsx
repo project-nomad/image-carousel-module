@@ -10,10 +10,9 @@ const FlexBox = (props) => {
       <Column>
         <Row flexGrow={1} justifyContent="spaced" alignItems="center">
         {
-          props.currentPictures.map((picture, index) => {
-            return (
-                <img src={picture.src} alt="picture here" width="80px" height="80px" key={index} />
-                )
+            props.currentPictures.map((picture, index) => {
+            return <img src={picture.src} alt="picture here" width="80px" height="80px" key={index} />;
+
           })
         }
         </Row>
