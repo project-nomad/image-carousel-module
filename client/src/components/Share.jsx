@@ -9,13 +9,15 @@ const buttonStyle = {
 const Share = (props) => {
   return (
     <div style={buttonStyle}>
-      <input type="button" value="Share" onClick={props.click} />
-      <FontAwesome
-        className="fas fa-share-square"
-        size="lg"
-        name="share"
-        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-      />
+      <button type="button" value="Share" onClick={props.click}>
+        <FontAwesome
+          className="fas fa-share-square"
+          size="lg"
+          name="share"
+          style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+        />
+      Share
+      </button>
     </div>
   );
 };

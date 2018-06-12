@@ -31,12 +31,14 @@ class Save extends React.Component {
 
     return (
       <div style={buttonStyle}>
-        <input
+        <button
           type="button"
           value="Save"
           onClick={this.props.click}
-        />
+        >
         {saveIcon}
+        SAVE
+        </button>
       </div>
     );
   }
