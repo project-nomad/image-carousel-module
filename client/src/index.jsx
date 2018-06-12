@@ -7,20 +7,8 @@ const reactDOM = require('react-dom');
 const axios = require('axios');
 
 // will have to make this background image a img tag evetually
-const AppStyle = {
-  margin: 'auto',
-  maxWidth: '100%',
-  overflow: 'hidden',
-  width: '100%',
-  height: '600px',
-  backgroundImage: `url(${'https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/room45.jpg'})`,
-  borderStyle: 'solid',
-  borderWidth: '5px',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  borderColor: 'grey',
-  backgroundPosition: 'center bottom',
-};
+const listingId = window.location.pathname.split('/')[2];
+
 
 
 class App extends React.Component {
@@ -30,44 +18,34 @@ class App extends React.Component {
       listingName: null,
       currentPictures: [],
       backGroundwasClicked: false,
-      currentId: null,
+      backgroundImage: null,
     };
     this.getData = this.getData.bind(this);
     this.handleBackgroundClick = this.handleBackgroundClick.bind(this);
-    this.getCurrentUrl = this.getCurrentUrl.bind(this);
   }
-
 
   componentDidMount() {
-    this.getCurrentUrl();
+    this.getData(listingId);
   }
 
-  getData() {
-    axios.get('/listings/4').then((response) => {
+  getData(id) {
+    axios.get(`/listings/${id}`).then((response) => {
       this.setState({
         listingName: response.data[0].name,
-        currentId: response.data[0].id,
       });
       console.log(this.state.listingName);
     }).catch((error) => {
       console.log('we didnt send the request', error);
     });
-    axios.get('/listings/4/pictures').then((response) => {
+    axios.get(`/listings/${id}/pictures`).then((response) => {
       this.setState({
         currentPictures: response.data,
+        backgroundImage: response.data[0].src
       });
       console.log(this.state.currentPictures);
     }).catch((error) => {
       console.log(error);
     });
-  }
-
-  getCurrentUrl() {
-    const urlArray = window.location.href.split('/');
-    const id = urlArray[urlArray.length - 1];
-    this.setState({
-      currentId: id,
-    }, this.getData());
   }
 
   handleBackgroundClick() {
@@ -83,6 +61,21 @@ class App extends React.Component {
   }
 
   render() {
+    const AppStyle = {
+      margin: 'auto',
+      maxWidth: '100%',
+      overflow: 'hidden',
+      backgroundImage: `url('${this.state.backgroundImage}')`,
+      width: '100%',
+      height: '600px',
+      borderStyle: 'solid',
+      borderWidth: '5px',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      borderColor: 'grey',
+      backgroundPosition: 'center bottom',
+    };
+
     return (
       <div style={AppStyle}>
         <ModalConductor
@@ -90,6 +83,7 @@ class App extends React.Component {
           name={this.state.listingName}
           currentPictures={this.state.currentPictures}
           backgroundClicked={this.state.backGroundwasClicked}
+          backgroundImage={this.state.backgroundImage}
         />
       </div>
     );

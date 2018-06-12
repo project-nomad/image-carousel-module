@@ -2,8 +2,6 @@ import React from 'react';
 
 import Carousel from './ViewPhotosCarousel/Carousel.jsx';
 
-import FlexBox from './ViewPhotosCarousel/FlexBox.jsx';
-
 
 const ModalViewPhotos = (props) => {
   // will eventually pass down the array of objects
@@ -29,22 +27,12 @@ const ModalViewPhotos = (props) => {
     left: '0px',
     background: 'rgba(0,0,0,0.3)',
   };
-  const FlexBoxStyle = {
-    position: 'absolute',
-    borderStyle: 'solid',
-    margin: '0 auto',
-    bottom: '26%',
-    right: '6%',
-  };
 
   return (
     <div>
       <div style={backDropStyle}></div>
       <div style={ModalStyle}>
         <Carousel currentPictures={props.currentPictures} />
-      </div>
-      <div style={FlexBoxStyle}>
-        <FlexBox currentPictures={props.currentPictures} />
       </div>
     </div>
   );

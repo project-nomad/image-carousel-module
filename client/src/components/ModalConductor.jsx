@@ -12,6 +12,7 @@ import ModalSave from './ModalComponents/ModalSave.jsx';
 
 import ModalViewPhotos from './ModalComponents/ModalViewPhotos.jsx';
 
+
 const SaveStyle = {
   position: 'absolute',
   right: '-90%',
@@ -93,7 +94,7 @@ class ModalConductor extends React.Component {
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     }
     return (
-      <div>
+      <div backgroundImage={this.props.backgroundImage} width="100%" position="absolute">
         <div style={ViewPhotosStyle}>
           <ViewPhotos click={this.handleModalClick} />
         </div>

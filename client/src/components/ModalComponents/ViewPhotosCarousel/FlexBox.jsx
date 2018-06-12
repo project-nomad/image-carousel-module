@@ -7,12 +7,12 @@ const FlexBox = (props) => {
 
   return (
     <div>
-      <Column flexGrow={1}>
-        <Row flexGrow={1} justifyContent="spaced">
+      <Column>
+        <Row flexGrow={1} justifyContent="spaced" alignItems="center">
         {
-          props.currentPictures.map((picture) => {
+          props.currentPictures.map((picture, index) => {
             return (
-                <img src={picture.src} alt="picture here" width="80px" height="80px" />
+                <img src={picture.src} alt="picture here" width="80px" height="80px" key={index} />
                 )
           })
         }

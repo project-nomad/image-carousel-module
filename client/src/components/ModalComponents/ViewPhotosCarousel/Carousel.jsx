@@ -4,6 +4,8 @@ import Arrow from './Arrow.jsx';
 
 import ImageSlide from './ImageSlide.jsx';
 
+import FlexBox from './FlexBox.jsx';
+
 const CarouselStyle = {
   height: '100%',
   margin: '0',
@@ -33,6 +35,13 @@ const captionStyles = {
   width: '100%',
   height: '100px',
   color: 'white',
+};
+const FlexBoxStyle = {
+  width: '100%',
+  position: 'absolute',
+  borderStyle: 'solid',
+  margin: '0 auto',
+  bottom: '-70%',
 };
 
 class Carousel extends React.Component {
@@ -86,6 +95,9 @@ class Carousel extends React.Component {
             {this.state.currentImageIndex + 1}/{this.props.currentPictures.length} Caption:
             {this.props.currentPictures[this.state.currentImageIndex].caption}
           </div>
+        </div>
+        <div style={FlexBoxStyle}>
+          <FlexBox currentPictures={this.props.currentPictures} />
         </div>
       </div>
     );
