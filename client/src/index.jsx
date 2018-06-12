@@ -1,5 +1,6 @@
 import ModalConductor from './components/ModalConductor.jsx';
 
+
 const React = require('react');
 
 const reactDOM = require('react-dom');
@@ -8,8 +9,6 @@ const axios = require('axios');
 
 // will have to make this background image a img tag evetually
 const listingId = window.location.pathname.split('/')[2];
-
-
 
 class App extends React.Component {
   constructor(props) {
@@ -64,13 +63,14 @@ class App extends React.Component {
     const AppStyle = {
       margin: 'auto',
       maxWidth: '100%',
+      maxHeight: '100%',
       overflow: 'hidden',
       backgroundImage: `url('${this.state.backgroundImage}')`,
       width: '100%',
       height: '600px',
       borderStyle: 'solid',
       borderWidth: '5px',
-      backgroundRepeat: 'no-repeat',
+      // backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       borderColor: 'grey',
       backgroundPosition: 'center bottom',

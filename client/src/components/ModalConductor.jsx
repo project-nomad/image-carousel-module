@@ -15,17 +15,25 @@ import ModalViewPhotos from './ModalComponents/ModalViewPhotos.jsx';
 
 const SaveStyle = {
   position: 'absolute',
-  right: '-90%',
-  height: '40px',
-  width: '100%',
-  bottom: '90%',
+  right: '10%',
+  height: '60px',
+  width: '80px',
+  bottom: '85%',
+};
+
+const ShareStyle = {
+  position: 'absolute',
+  right: '4%',
+  height: '60px',
+  width: '80px',
+  bottom: '85%',
 };
 
 const ExitStyle = {
-  right: '-97%',
+  right: '1%',
   color: 'white',
   position: 'absolute',
-  width: '100%',
+  width: '40px',
   bottom: '95%',
 };
 
@@ -35,15 +43,6 @@ const ViewPhotosStyle = {
   right: '-3%',
   bottom: '35%',
 };
-
-const ShareStyle = {
-  position: 'absolute',
-  right: '-90%',
-  height: '40px',
-  width: '100%',
-  top: '10%',
-};
-
 
 class ModalConductor extends React.Component {
   constructor(props) {
@@ -94,7 +93,7 @@ class ModalConductor extends React.Component {
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     }
     return (
-      <div backgroundImage={this.props.backgroundImage} width="100%" position="absolute">
+      <div width="100%" position="absolute">
         <div style={ViewPhotosStyle}>
           <ViewPhotos click={this.handleModalClick} />
         </div>

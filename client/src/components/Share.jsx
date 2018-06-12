@@ -2,6 +2,7 @@ const React = require('react');
 
 const FontAwesome = require('react-fontawesome');
 
+
 const buttonStyle = {
   color: 'white',
 };
@@ -15,8 +16,7 @@ const Share = (props) => {
           size="lg"
           name="share"
           style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-        />
-      Share
+        /> SHARE
       </button>
     </div>
   );
