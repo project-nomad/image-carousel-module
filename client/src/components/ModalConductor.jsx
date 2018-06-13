@@ -15,9 +15,9 @@ import ModalViewPhotos from './ModalComponents/ModalViewPhotos.jsx';
 
 const SaveStyle = {
   position: 'absolute',
-  right: '10%',
+  right: '13%',
   height: '60px',
-  width: '80px',
+  width: '60px',
   bottom: '85%',
 };
 

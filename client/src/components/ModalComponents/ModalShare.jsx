@@ -38,6 +38,17 @@ class ModalShare extends React.Component {
       background: 'rgba(0,0,0,0.3)',
     };
 
+    const twitterStyle = {
+      width: '40px',
+      height: '30px',
+    };
+
+    const gmailStyle = {
+      width: '30px',
+      height: '20px',
+      bottom: '20%',
+    };
+
 
     return (
       <div>
@@ -48,12 +59,8 @@ class ModalShare extends React.Component {
           <hr/>
           <div>
             <a href="https://www.facebook.com/" >
-              <FontAwesome
-                className="fab fa-facebook-square"
-                name="facebook"
-                size="2x"
-                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-              />
+              <img style={twitterStyle} src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/facebook.jpg" alt="facebook" />
+
               FACEBOOK
             </a>
           </div>
@@ -62,12 +69,7 @@ class ModalShare extends React.Component {
           <br/>
           <div>
             <a href="https://www.twitter.com/" >
-              <FontAwesome
-                className="fab fa-twitter"
-                name="twitter"
-                size="2x"
-                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-              />
+             <img style={twitterStyle} src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/twitter.png" alt="twitter" />
               TWITTER
             </a>
           </div>
@@ -76,12 +78,7 @@ class ModalShare extends React.Component {
           <br/>
           <div>
             <a href="https://www.gmail.com/" >
-              <FontAwesome
-                className="fab fa-google"
-                name="google"
-                size="2x"
-                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-              />
+            <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/gmail.jpg" alt="gmail" style={gmailStyle} />
              GMAIL
             </a>
           </div>
@@ -90,11 +87,7 @@ class ModalShare extends React.Component {
           <br/>
           <div>
             <a href="https://www.facebook.com/" >
-              <FontAwesome
-                className="fab fa-facebook-square"
-                size="2x"
-                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-              />
+             <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/messenger.png" alt="gmail" style={twitterStyle}/>
               MESSENGER
             </a>
           </div>
@@ -102,11 +95,7 @@ class ModalShare extends React.Component {
           <hr />
           <br/>
           <a href="https://www.facebook.com/" >
-            <FontAwesome
-              className="fas fa-copy"
-              size="2x"
-              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-            />
+            <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/copy.png" alt="Copy" style={twitterStyle}/>
             COPY LINK
           </a>
           <br/>

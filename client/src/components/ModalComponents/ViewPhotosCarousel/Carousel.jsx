@@ -17,19 +17,19 @@ const CarouselStyle = {
 const ArrowRight = {
   color: '#14B6D4',
   cursor: 'pointer',
-  fontSize: '8rem',
+  fontSize: '6rem',
   position: 'fixed',
-  top: '40%',
-  right: '-20rem',
+  top: '-10%',
+  right: '-32rem',
 };
 
 const ArrowLeft = {
   color: '#14B6D4',
   cursor: 'pointer',
-  fontSize: '8rem',
+  fontSize: '6rem',
   position: 'fixed',
-  top: '40%',
-  left: '-20rem',
+  top: '-10%',
+  left: '-32rem',
 };
 const captionStyles = {
   position: 'fixed',
@@ -57,6 +57,19 @@ const hideButtonStyle = {
   position: 'absolute',
   bottom: '250%',
   right: '-10%',
+};
+
+const upArrowStyle = {
+  width: '10px',
+  height: '10px',
+};
+
+const hideFlexStyle = {
+  height: '0px',
+}
+
+const transitionsStyle = {
+  transitions: '3s',
 };
 
 class Carousel extends React.Component {
@@ -107,26 +120,17 @@ class Carousel extends React.Component {
       showBox = (
         <div style={FlexBoxStyle}>
           <button style={hideButtonStyle} onClick={this.toggleFlexBox}> hide list
-            <AwesomeFont
-              className="fas fa-angle-down"
-              name="arrowup"
-              size="1x"
-              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-            />
+            <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/uparrow.png" alt="uparrow" style={upArrowStyle} />
           </button>
-          <FlexBox currentPictures={this.props.currentPictures} showingBox={this.state.showingFlexBox} />
+          <FlexBox currentPictures={this.props.currentPictures} showingBox={this.state.showingFlexBox} style={transitionsStyle} />
         </div>);
     } else if (this.state.showingFlexBox === false) {
       showBox = (
         <div>
           <button style={showButtonStyle} onClick={this.toggleFlexBox}> show list
-            <AwesomeFont
-              className="fas fa-angle-up"
-              name="arrowup"
-              size="1x"
-              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-            />
+            <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/downArrow.png" alt="downarrow" style={upArrowStyle} />
           </button>
+          <FlexBox currentPictures={this.props.currentPictures} showingBox={this.state.showingFlexBox} style={transitionsStyle} />
         </div>
       );
     }

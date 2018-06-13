@@ -32,7 +32,6 @@ class App extends React.Component {
       this.setState({
         listingName: response.data[0].name,
       });
-      console.log(this.state.listingName);
     }).catch((error) => {
       console.log('we didnt send the request', error);
     });
@@ -41,7 +40,6 @@ class App extends React.Component {
         currentPictures: response.data,
         backgroundImage: response.data[0].src
       });
-      console.log(this.state.currentPictures);
     }).catch((error) => {
       console.log(error);
     });

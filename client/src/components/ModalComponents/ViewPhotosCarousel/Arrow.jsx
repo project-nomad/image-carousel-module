@@ -1,21 +1,16 @@
 import React from 'React';
 
-const FontAwesome = require('react-fontawesome');
 
 const Arrow = ({ direction, clickFunction}) => {
   let icon = null;
   if (direction === 'right') {
-    icon = (<FontAwesome
-      className="fas fa-angle-right"
-      size="7x"
-      style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-    />);
+    icon = (
+      <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/rightarrow.png" alt="right arrow" />
+    );
   } else if (direction === 'left') {
-    icon = (<FontAwesome
-      className="fas fa-angle-left"
-      size="7x"
-      style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-    />);
+    icon = (
+      <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/leftarrow.png" alt="left arrow" />
+    );
   }
 
   return (
@@ -25,4 +20,4 @@ const Arrow = ({ direction, clickFunction}) => {
   );
 };
 
-export default Arrow;
+export default Arrow
