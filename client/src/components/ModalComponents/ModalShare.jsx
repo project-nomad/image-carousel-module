@@ -92,6 +92,7 @@ class ModalShare extends React.Component {
             <a href="https://www.facebook.com/" >
               <FontAwesome
                 className="fab fa-facebook-square"
+                name="square"
                 size="2x"
                 style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
               />
@@ -104,6 +105,7 @@ class ModalShare extends React.Component {
           <a href="https://www.facebook.com/" >
             <FontAwesome
               className="fas fa-copy"
+              name="facebook"
               size="2x"
               style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
             />

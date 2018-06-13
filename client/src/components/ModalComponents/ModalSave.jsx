@@ -30,7 +30,7 @@ const ModalSave = (props) => {
       <div style={backDropStyle}></div>
       <div style={ModalStyle}>
       <h2> Save To List </h2>
-        <input type="input" placeholder="Name your list" borderStyle="solid" /> <br/>
+        <input type="input" placeholder="Name your list" borderstyle="solid" /> <br/>
       <input type="button" value="CANCEL" />
       <input type="button" value="CREATE" />
       </div>

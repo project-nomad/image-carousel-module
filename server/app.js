@@ -6,7 +6,7 @@ const app = express();
 
 const db = require('../database-mysql/index.js');
 
-app.use('/', express.static(path.join(__dirname, '/../public')));
+//app.use('/', express.static(path.join(__dirname, '../public/')));
 app.use('/listings/:id', express.static(path.join(__dirname, '../public/')));
 
 app.get('/listings/:listingId', (req, res) => {

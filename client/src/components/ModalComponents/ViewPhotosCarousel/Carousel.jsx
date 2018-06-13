@@ -19,7 +19,7 @@ const ArrowRight = {
   cursor: 'pointer',
   fontSize: '8rem',
   position: 'fixed',
-  top: '40%',
+  top: '10%',
   right: '-20rem',
 };
 
@@ -28,7 +28,7 @@ const ArrowLeft = {
   cursor: 'pointer',
   fontSize: '8rem',
   position: 'fixed',
-  top: '40%',
+  top: '10%',
   left: '-20rem',
 };
 const captionStyles = {
@@ -110,7 +110,7 @@ class Carousel extends React.Component {
             <AwesomeFont
               className="fas fa-angle-down"
               name="arrowup"
-              size="1x"
+              size="lg"
               style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
             />
           </button>
@@ -123,7 +123,7 @@ class Carousel extends React.Component {
             <AwesomeFont
               className="fas fa-angle-up"
               name="arrowup"
-              size="1x"
+              size="lg"
               style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
             />
           </button>

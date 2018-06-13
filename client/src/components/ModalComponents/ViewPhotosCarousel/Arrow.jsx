@@ -7,13 +7,15 @@ const Arrow = ({ direction, clickFunction}) => {
   if (direction === 'right') {
     icon = (<FontAwesome
       className="fas fa-angle-right"
-      size="7x"
+      name="rightarrow"
+      size="3x"
       style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
     />);
   } else if (direction === 'left') {
     icon = (<FontAwesome
       className="fas fa-angle-left"
-      size="7x"
+      name="leftarrow"
+      size="3x"
       style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
     />);
   }

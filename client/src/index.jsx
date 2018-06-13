@@ -41,7 +41,6 @@ class App extends React.Component {
         currentPictures: response.data,
         backgroundImage: response.data[0].src
       });
-      console.log(this.state.currentPictures);
     }).catch((error) => {
       console.log(error);
     });
