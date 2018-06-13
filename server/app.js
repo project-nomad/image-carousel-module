@@ -13,6 +13,7 @@ app.get('/listings/:listingId', (req, res) => {
     if (err) {
       res.status(404).send('error in getting data from db', err);
     } else if (listingData) {
+      res.header('Access-Control-Allow-Origin', '*');
       res.status(200).send(listingData);
     }
   });
@@ -23,6 +24,7 @@ app.get('/listings/:listingId/pictures', (req, res) => {
     if (err) {
       res.status(404).send('error retrieving photos from database', err);
     } else if (pictureData) {
+      res.header('Access-Control-Allow-Origin', '*');
       res.status(200).send(pictureData);
     }
   });
