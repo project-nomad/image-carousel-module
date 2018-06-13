@@ -17,7 +17,7 @@ const CarouselStyle = {
 const ArrowRight = {
   color: '#14B6D4',
   cursor: 'pointer',
-  fontSize: '6rem',
+  fontSize: '4rem',
   position: 'fixed',
   top: '-10%',
   right: '-32rem',
@@ -26,7 +26,7 @@ const ArrowRight = {
 const ArrowLeft = {
   color: '#14B6D4',
   cursor: 'pointer',
-  fontSize: '6rem',
+  fontSize: '4rem',
   position: 'fixed',
   top: '-10%',
   left: '-32rem',
