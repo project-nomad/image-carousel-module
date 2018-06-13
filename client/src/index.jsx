@@ -32,7 +32,6 @@ class App extends React.Component {
       this.setState({
         listingName: response.data[0].name,
       });
-      console.log(this.state.listingName);
     }).catch((error) => {
       console.log('we didnt send the request', error);
     });
