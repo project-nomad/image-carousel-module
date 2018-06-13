@@ -90,4 +90,4 @@ class App extends React.Component {
   }
 }
 
-reactDOM.render(<App />, document.getElementById('App'));
+reactDOM.render(<App />, document.getElementById('carousel-module'));
