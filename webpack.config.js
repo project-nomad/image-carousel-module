@@ -22,7 +22,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle-carousel.js',
     path: DIST_DIR,
   },
 };
