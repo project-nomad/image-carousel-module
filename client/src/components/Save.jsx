@@ -1,9 +1,13 @@
 const React = require('react');
-const FontAwesome = require('react-fontawesome');
 
 const buttonStyle = {
   width: '90px',
   color: 'white',
+};
+
+const imageStyle = {
+  width:"10px",
+  height:"10px",
 };
 
 class Save extends React.Component {
@@ -22,15 +26,6 @@ class Save extends React.Component {
   }
 
   render() {
-    const saveIcon = (<FontAwesome
-      className="far fa-heart"
-      name="heart"
-      size="lg"
-      // style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-    />);
-    if(this.state.saveIconWasClicked === true){
-
-    }
 
     return (
       <div style={buttonStyle}>
@@ -39,7 +34,7 @@ class Save extends React.Component {
           value="Save"
           onClick={this.props.click}
         >
-          {saveIcon}
+          <img style={imageStyle} src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/heart.png" alt="save" />
         SAVE
         </button>
       </div>
