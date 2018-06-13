@@ -7,7 +7,6 @@ const reactDOM = require('react-dom');
 
 const axios = require('axios');
 
-// will have to make this background image a img tag evetually
 const listingId = window.location.pathname.split('/')[2];
 
 class App extends React.Component {
@@ -68,7 +67,6 @@ class App extends React.Component {
       height: '600px',
       borderStyle: 'solid',
       borderWidth: '5px',
-      // backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       borderColor: 'grey',
       backgroundPosition: 'center bottom',
