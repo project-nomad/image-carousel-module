@@ -19,14 +19,12 @@ class Save extends React.Component {
     this.handleSaveClick = this.handleSaveClick.bind(this)
   }
   handleSaveClick() {
-
     this.setState({
       saveIconWasClicked: true,
     });
   }
 
   render() {
-
     return (
       <div style={buttonStyle}>
         <button

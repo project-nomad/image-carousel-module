@@ -65,10 +65,7 @@ class App extends React.Component {
       backgroundImage: `url('${this.state.backgroundImage}')`,
       width: '100%',
       height: '600px',
-      borderStyle: 'solid',
-      borderWidth: '5px',
       backgroundSize: 'cover',
-      borderColor: 'grey',
       backgroundPosition: 'center bottom',
     };
 
