@@ -20,7 +20,7 @@ const ArrowRight = {
   fontSize: '4rem',
   position: 'fixed',
   top: '-10%',
-  right: '-32rem',
+  right: '-40rem',
 };
 
 const ArrowLeft = {
@@ -29,7 +29,7 @@ const ArrowLeft = {
   fontSize: '4rem',
   position: 'fixed',
   top: '-10%',
-  left: '-32rem',
+  left: '-47rem',
 };
 const captionStyles = {
   position: 'fixed',

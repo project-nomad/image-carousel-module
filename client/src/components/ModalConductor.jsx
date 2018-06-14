@@ -42,7 +42,7 @@ const ViewPhotosStyle = {
   position: 'absolute',
   width: '5%',
   right: '93%',
-  bottom: '35%',
+  bottom: '10%',
 };
 
 class ModalConductor extends React.Component {
@@ -88,7 +88,7 @@ class ModalConductor extends React.Component {
       modalChoice = <ModalShare name={this.props.name} />;
     } else if (this.state.isModalOpen === true && this.state.currentModal === 'Save') {
       modalChoice = <ModalSave />;
-    } else if (this.state.isModalOpen === true && this.state.currentModal === 'ViewPhotos') {
+    } else if (this.state.isModalOpen === true && this.state.currentModal === 'View Photos') {
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     } else if (this.props.backgroundClicked === true) {
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
