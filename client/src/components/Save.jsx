@@ -33,7 +33,7 @@ class Save extends React.Component {
           onClick={this.props.click}
         >
           <img style={imageStyle} src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/heart.png" alt="save" />
-        SAVE
+        Save
         </button>
       </div>
     );
