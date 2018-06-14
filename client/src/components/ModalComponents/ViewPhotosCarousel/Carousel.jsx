@@ -43,7 +43,7 @@ const FlexBoxStyle = {
   position: 'absolute',
   borderStyle: 'solid',
   margin: '0 auto',
-  bottom: '-70%',
+  bottom: '-40%',
 };
 const showButtonStyle = {
   width: '80px',
@@ -55,7 +55,7 @@ const showButtonStyle = {
 const hideButtonStyle = {
   width: '80px',
   position: 'absolute',
-  bottom: '250%',
+  bottom: '100%',
   right: '-10%',
 };
 
