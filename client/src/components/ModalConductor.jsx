@@ -15,18 +15,19 @@ import ModalViewPhotos from './ModalComponents/ModalViewPhotos.jsx';
 
 const SaveStyle = {
   position: 'absolute',
-  right: '13%',
+  right: '4%',
   height: '60px',
-  width: '60px',
+  width: '80px',
   bottom: '85%',
 };
 
 const ShareStyle = {
   position: 'absolute',
-  right: '4%',
+  right: '13%',
   height: '60px',
   width: '80px',
   bottom: '85%',
+
 };
 
 const ExitStyle = {

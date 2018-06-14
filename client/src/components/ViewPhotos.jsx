@@ -5,7 +5,7 @@ const ViewPhotos = (props) => {
 
   return (
     <div>
-      <input type="button" id="VIEW PHOTOS" value="ViewPhotos" onClick={props.click} />
+      <input type="button" id="VIEW PHOTOS" value="View Photos" onClick={props.click} />
     </div>
   );
 };
