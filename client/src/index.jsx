@@ -18,7 +18,6 @@ class App extends React.Component {
       backGroundwasClicked: false,
       backgroundImage: null,
     };
-    this.getData = this.getData.bind(this);
     this.handleBackgroundClick = this.handleBackgroundClick.bind(this);
   }
 
@@ -26,34 +25,28 @@ class App extends React.Component {
     this.getData(listingId);
   }
 
-  getData(id) {
-    axios.get(`/listings/${id}`).then((response) => {
+  async getData (id) {
+    try {
+      const name = await axios.get(`/listings/${id}`)
+        .then(response => response.data[0].name);
+
+      const pictures = await axios.get(`/listings/${id}/pictures`)
+      .then(response => response.data);
+
       this.setState({
-        listingName: response.data[0].name,
+        listingName: name,
+        currentPictures: pictures,
+        backgroundImage: pictures[0].src,
       });
-    }).catch((error) => {
-      console.log('we didnt send the request', error);
-    });
-    axios.get(`/listings/${id}/pictures`).then((response) => {
-      this.setState({
-        currentPictures: response.data,
-        backgroundImage: response.data[0].src
-      });
-    }).catch((error) => {
-      console.log(error);
-    });
+    } catch(err) {
+      console.error(err);
+    }
   }
 
   handleBackgroundClick() {
-    if (this.state.backGroundwasClicked === false) {
-      this.setState({
-        backGroundwasClicked: true,
-      });
-    } else if (this.state.backGroundwasClicked === true) {
-      this.setState({
-        backGroundwasClicked: false,
-      })
-    }
+    this.setState({
+      backGroundwasClicked: !this.state.backGroundwasClicked
+    });
   }
 
   render() {

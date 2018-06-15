@@ -122,7 +122,7 @@ class Carousel extends React.Component {
           <button style={hideButtonStyle} onClick={this.toggleFlexBox}> hide list
             <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/uparrow.png" alt="uparrow" style={upArrowStyle} />
           </button>
-          <FlexBox currentPictures={this.props.currentPictures} showingBox={this.state.showingFlexBox} style={transitionsStyle} />
+          <FlexBox currentPictures={this.props.currentPictures} style={FlexBoxStyle}/>
         </div>);
     } else if (this.state.showingFlexBox === false) {
       showBox = (
@@ -130,7 +130,7 @@ class Carousel extends React.Component {
           <button style={showButtonStyle} onClick={this.toggleFlexBox}> show list
             <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/downArrow.png" alt="downarrow" style={upArrowStyle} />
           </button>
-          <FlexBox currentPictures={this.props.currentPictures} showingBox={this.state.showingFlexBox} style={transitionsStyle} />
+          <FlexBox currentPictures={this.props.currentPictures} style={hideFlexStyle}/>
         </div>
       );
     }

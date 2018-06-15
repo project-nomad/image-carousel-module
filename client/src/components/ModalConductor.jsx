@@ -81,8 +81,7 @@ class ModalConductor extends React.Component {
       isModalOpen: false,
     });
   }
-
-  render() {
+  renderModal() {
     let modalChoice = null;
     if (this.state.isModalOpen === true && this.state.currentModal === 'Share') {
       modalChoice = <ModalShare name={this.props.name} />;
@@ -93,6 +92,9 @@ class ModalConductor extends React.Component {
     } else if (this.props.backgroundClicked === true) {
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     }
+    return modalChoice;
+  }
+  render() {
     return (
       <div width="100%" position="absolute">
         <div style={ViewPhotosStyle}>
@@ -104,7 +106,7 @@ class ModalConductor extends React.Component {
         <div style={SaveStyle}>
           <Save click={this.handleModalClick} />
         </div>
-        {modalChoice}
+        {this.renderModal()}
         <div style={ExitStyle} onClick={this.handleExitClick} value="exit">
           X
         </div>
