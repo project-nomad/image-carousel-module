@@ -27,22 +27,38 @@ class App extends React.Component {
     this.getData(listingId);
   }
 
-  getData(id) {
-    axios.get(`/listings/${id}`).then((response) => {
-      this.setState({
-        listingName: response.data[0].name,
-      });
-    }).catch((error) => {
-      console.log('we didnt send the request', error);
-    });
-    axios.get(`/listings/${id}/pictures`).then((response) => {
-      this.setState({
-        currentPictures: response.data,
-        backgroundImage: response.data[0].src
-      });
-    }).catch((error) => {
-      console.log(error);
-    });
+  getData(id){
+
+    // axios.get(`/listings/${id}`).then((response) => {
+    //   this.setState({
+    //     listingName: response.data[0].name,
+    //   });
+    // }).catch((error) => {
+    //   console.log('we didnt send the request', error);
+    // });
+
+
+
+        axios({
+          method: 'GET',
+          url: 'https://api.flickr.com/services/feeds/photos_public.gne',
+          responseType: 'text',
+        }).then((res)=>{
+          console.log(res)
+        })
+
+    // axios.get(`/listings/${id}/pictures`).then((response) => {
+    //   this.setState({
+    //     currentPictures: response.data,
+    //     backgroundImage: response.data[0].src
+    //   });
+    // }).catch((error) => {
+    //   console.log(error);
+    // });
+
+
+
+
   }
 
   handleBackgroundClick() {

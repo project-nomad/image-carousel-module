@@ -8,7 +8,25 @@ const buttonStyle = {
 const imageStyle = {
   width:"10px",
   height:"10px",
+   marginRight: '10px',
+  // marginLeft: '5px',
 };
+
+const textStyle = {
+  width: "20px",
+  height: "20px",
+}
+
+const flexBoxStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  paddingTop: '8px',
+  paddingBottom: '8px',
+  paddingLeft: '15px',
+  paddingRight: '15px',
+};
+
 
 class Save extends React.Component {
   constructor(props){
@@ -33,9 +51,16 @@ class Save extends React.Component {
           type="button"
           value="Save"
           onClick={this.props.click}
+          style={flexBoxStyle}
         >
-          <img style={imageStyle} src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/heart.png" alt="save" />
-        SAVE
+        <div>
+          <img style={imageStyle} src="https://s3.amazonaws.com/thenomad1/iconmonstr-heart-thin-24.png" />
+        </div>
+
+          SAVE
+
+
+
         </button>
       </div>
     );

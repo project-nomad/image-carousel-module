@@ -40,8 +40,8 @@ const ExitStyle = {
 const ViewPhotosStyle = {
   position: 'absolute',
   width: '5%',
-  right: '93%',
-  bottom: '35%',
+  left: '93%',
+  bottom: '30%',
 };
 
 class ModalConductor extends React.Component {
@@ -97,11 +97,11 @@ class ModalConductor extends React.Component {
         <div style={ViewPhotosStyle}>
           <ViewPhotos click={this.handleModalClick} />
         </div>
-        <div style={ShareStyle} >
-          <Share click={this.handleModalClick} />
-        </div>
         <div style={SaveStyle}>
           <Save click={this.handleModalClick} />
+        </div>
+        <div style={ShareStyle} >
+          <Share click={this.handleModalClick} />
         </div>
         {modalChoice}
         <div style={ExitStyle} onClick={this.handleExitClick} value="exit">
