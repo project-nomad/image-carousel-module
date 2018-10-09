@@ -35,7 +35,7 @@ class ModalShare extends React.Component {
       height: '100%',
       top: '0px',
       left: '0px',
-      background: 'rgba(0,0,0,0.3)',
+      background: 'grey',
     };
 
     const twitterStyle = {
@@ -49,17 +49,25 @@ class ModalShare extends React.Component {
       bottom: '20%',
     };
 
+    const titleStyle = {
+      display: 'flex',
+      alignContent: 'center',
+      marginLeft: '12%',
+    };
+
 
     return (
       <div>
         <div style={backDropStyle}></div>
         <div style={ModalStyle}>
-          <h3>SHARE</h3>
-          <p> Check out this awesome listing on Airbnb: {this.props.name} </p>
+          <div style={titleStyle}>
+
+           <h2> Share out this awesome listing gallery! </h2>
+          </div>
           <hr/>
           <div>
             <a href="https://www.facebook.com/" >
-              <img style={twitterStyle} src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/facebook.jpg" alt="facebook" />
+              <img style={twitterStyle} src="https://s3.amazonaws.com/thenomad1/iconmonstr-facebook-4.svg" alt="facebook" />
 
               FACEBOOK
             </a>
@@ -69,7 +77,7 @@ class ModalShare extends React.Component {
           <br/>
           <div>
             <a href="https://www.twitter.com/" >
-             <img style={twitterStyle} src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/twitter.png" alt="twitter" />
+             <img style={twitterStyle} src="https://s3.amazonaws.com/thenomad1/iconmonstr-twitter-1.svg" alt="twitter" />
               TWITTER
             </a>
           </div>
@@ -78,7 +86,7 @@ class ModalShare extends React.Component {
           <br/>
           <div>
             <a href="https://www.gmail.com/" >
-            <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/gmail.jpg" alt="gmail" style={gmailStyle} />
+            <img src="https://s3.amazonaws.com/thenomad1/gmail.svg" alt="gmail" style={gmailStyle} />
              GMAIL
             </a>
           </div>
@@ -87,7 +95,7 @@ class ModalShare extends React.Component {
           <br/>
           <div>
             <a href="https://www.facebook.com/" >
-             <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/messenger.png" alt="gmail" style={twitterStyle}/>
+             <img src="https://s3.amazonaws.com/thenomad1/iconmonstr-facebook-messenger-1.svg" alt="gmail" style={twitterStyle}/>
               MESSENGER
             </a>
           </div>
@@ -95,7 +103,7 @@ class ModalShare extends React.Component {
           <hr />
           <br/>
           <a href="https://www.facebook.com/" >
-            <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/copy.png" alt="Copy" style={twitterStyle}/>
+            <img src="https://s3.amazonaws.com/thenomad1/copy.svg" alt="Copy" style={twitterStyle}/>
             COPY LINK
           </a>
           <br/>

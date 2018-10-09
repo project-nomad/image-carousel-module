@@ -5,11 +5,11 @@ const Arrow = ({ direction, clickFunction}) => {
   let icon = null;
   if (direction === 'right') {
     icon = (
-      <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/rightarrow.png" alt="right arrow" />
+      <img src="https://s3.amazonaws.com/thenomad1/rarrow.svg" alt="right arrow" />
     );
   } else if (direction === 'left') {
     icon = (
-      <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/leftarrow.png" alt="left arrow" />
+      <img src="https://s3.amazonaws.com/thenomad1/larrow.svg" alt="left arrow" />
     );
   }
 

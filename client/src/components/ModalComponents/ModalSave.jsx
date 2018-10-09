@@ -20,7 +20,7 @@ const ModalSave = (props) => {
     height: '100%',
     top: '0px',
     left: '0px',
-    background: 'rgba(0,0,0,0.3)',
+    background: 'grey',
   };
 
   const reviewStyle = {
@@ -45,7 +45,7 @@ const ModalSave = (props) => {
           <br/>
           <br/>
           <br/>
-          <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/review.png" alt="save" style={reviewStyle} />
+          <img  alt="save" style={reviewStyle} />
       </div>
     </div>
   )

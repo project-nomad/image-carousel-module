@@ -42,6 +42,19 @@ const ViewPhotosStyle = {
   width: '5%',
   left: '93%',
   bottom: '30%',
+  paddingTop: '5px',
+  paddingBottom: '5px',
+  paddingRight: '2px',
+  paddingLeft: '2px',
+};
+const flexBoxStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  paddingTop: '8px',
+  paddingBottom: '8px',
+  paddingLeft: '15px',
+  paddingRight: '15px',
 };
 
 class ModalConductor extends React.Component {
