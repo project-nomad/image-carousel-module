@@ -6,7 +6,7 @@ import ImageSlide from './ImageSlide.jsx';
 
 
 
-const AwesomeFont = require('react-fontawesome');
+
 
 const CarouselStyle = {
   height: '100%',
@@ -19,8 +19,8 @@ const ArrowRight = {
   cursor: 'pointer',
   fontSize: '4rem',
   position: 'fixed',
-  top: '-10%',
-  right: '-32rem',
+  top: '30%',
+  right: '-5%',
 };
 
 const ArrowLeft = {
@@ -28,8 +28,8 @@ const ArrowLeft = {
   cursor: 'pointer',
   fontSize: '4rem',
   position: 'fixed',
-  top: '-10%',
-  left: '-32rem',
+  top: '30%',
+  left: '-5%',
 };
 const captionStyles = {
   position: 'fixed',
@@ -123,7 +123,7 @@ class Carousel extends React.Component {
       <div>
         <div className="Carousel" style={CarouselStyle}>
           <div style={CarouselStyle}>
-            <ImageSlide url={this.props.currentPictures[this.state.currentImageIndex]} />
+            <ImageSlide url={this.props.currentPictures[this.state.currentImageIndex][0]} />
           </div>
           <div style={ArrowLeft}>
             <Arrow
@@ -139,7 +139,7 @@ class Carousel extends React.Component {
           </div>
           <div style={captionStyles}>
             {this.state.currentImageIndex + 1}/{this.props.currentPictures.length} Caption:
-            {this.props.currentPictures[this.state.currentImageIndex].caption}
+            {this.props.currentPictures[this.state.currentImageIndex][1]}
           </div>
         </div>
         {

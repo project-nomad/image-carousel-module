@@ -28,12 +28,8 @@ const Share = (props) => {
   return (
     <div style={buttonStyle}>
       <button type="button" value="Share" onClick={props.click} style={flexBoxStyle}>
-        <div>
           <img style={shareStyle} src='https://s3.amazonaws.com/thenomad1/noun.svg' />
-        </div>
-        <div>
           SHARE
-        </div>
       </button>
     </div>
   );

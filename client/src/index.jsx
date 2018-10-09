@@ -42,8 +42,8 @@ class App extends React.Component {
       response.data.photos.photo.forEach((photo, index)=>{
         let currCdn =  `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
         this.setState({
-          currentPictures: [...this.state.currentPictures, currCdn],
-        });
+          currentPictures: [...this.state.currentPictures, [currCdn, photo.title]],
+        }, console.log(photo));
       });
     }).catch((error) => {
       console.log(error);
