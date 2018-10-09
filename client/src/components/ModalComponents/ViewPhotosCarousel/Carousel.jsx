@@ -4,7 +4,7 @@ import Arrow from './Arrow.jsx';
 
 import ImageSlide from './ImageSlide.jsx';
 
-import FlexBox from './FlexBox.jsx';
+
 
 const AwesomeFont = require('react-fontawesome');
 
@@ -66,7 +66,7 @@ const upArrowStyle = {
 
 const hideFlexStyle = {
   height: '0px',
-}
+};
 
 const transitionsStyle = {
   transitions: '3s',
@@ -103,6 +103,7 @@ class Carousel extends React.Component {
   }
 
   toggleFlexBox() {
+    console.log(this.props)
     if (this.state.showingFlexBox === false) {
       this.setState({
         showingFlexBox: true,
@@ -116,24 +117,7 @@ class Carousel extends React.Component {
 
   render() {
     let showBox = null;
-    if (this.state.showingFlexBox === true) {
-      showBox = (
-        <div style={FlexBoxStyle}>
-          <button style={hideButtonStyle} onClick={this.toggleFlexBox}> hide list
-            <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/uparrow.png" alt="uparrow" style={upArrowStyle} />
-          </button>
-          <FlexBox currentPictures={this.props.currentPictures} showingBox={this.state.showingFlexBox} style={transitionsStyle} />
-        </div>);
-    } else if (this.state.showingFlexBox === false) {
-      showBox = (
-        <div>
-          <button style={showButtonStyle} onClick={this.toggleFlexBox}> show list
-            <img src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/downArrow.png" alt="downarrow" style={upArrowStyle} />
-          </button>
-          <FlexBox currentPictures={this.props.currentPictures} showingBox={this.state.showingFlexBox} style={transitionsStyle} />
-        </div>
-      );
-    }
+
 
     return (
       <div>

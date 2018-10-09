@@ -11,7 +11,7 @@ const imageStyle = {
    marginRight: '10px',
   // marginLeft: '5px',
 };
-
+``
 const textStyle = {
   width: "20px",
   height: "20px",

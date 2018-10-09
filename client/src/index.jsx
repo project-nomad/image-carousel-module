@@ -1,5 +1,7 @@
 import ModalConductor from './components/ModalConductor.jsx';
 
+import flickrInfo from '../../public/passwords.js';
+
 
 const React = require('react');
 
@@ -28,37 +30,24 @@ class App extends React.Component {
   }
 
   getData(id){
+  // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 
-    // axios.get(`/listings/${id}`).then((response) => {
-    //   this.setState({
-    //     listingName: response.data[0].name,
-    //   });
-    // }).catch((error) => {
-    //   console.log('we didnt send the request', error);
-    // });
-
-
-
-        axios({
-          method: 'GET',
-          url: 'https://api.flickr.com/services/feeds/photos_public.gne',
-          responseType: 'text',
-        }).then((res)=>{
-          console.log(res)
-        })
-
-    // axios.get(`/listings/${id}/pictures`).then((response) => {
-    //   this.setState({
-    //     currentPictures: response.data,
-    //     backgroundImage: response.data[0].src
-    //   });
-    // }).catch((error) => {
-    //   console.log(error);
-    // });
-
-
-
-
+   let urlSession = `https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=${flickrInfo.Key}&gallery_id=72157693170803464&format=json&nojsoncallback=1`
+    axios.get(urlSession).then((response) => {
+      // make cdn for first element; set first element as background image
+      const firstEle = `https://farm${response.data.photos.photo[0].farm}.staticflickr.com/${response.data.photos.photo[0].server}/${response.data.photos.photo[0].id}_${response.data.photos.photo[0].secret}.jpg`
+      this.setState({
+        backgroundImage: firstEle,
+      });
+      response.data.photos.photo.forEach((photo, index)=>{
+        let currCdn =  `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+        this.setState({
+          currentPictures: [...this.state.currentPictures, currCdn],
+        });
+      });
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
   handleBackgroundClick() {
