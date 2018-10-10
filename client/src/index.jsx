@@ -43,7 +43,7 @@ class App extends React.Component {
         let currCdn =  `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
         this.setState({
           currentPictures: [...this.state.currentPictures, [currCdn, photo.title]],
-        }, console.log(photo));
+        });
       });
     }).catch((error) => {
       console.log(error);
@@ -64,30 +64,118 @@ class App extends React.Component {
 
   render() {
     const AppStyle = {
-      margin: 'auto',
-      maxWidth: '100%',
-      maxHeight: '100%',
-      overflow: 'hidden',
-      backgroundImage: `url('${this.state.backgroundImage}')`,
       width: '100%',
       height: '600px',
       borderStyle: 'solid',
       borderWidth: '5px',
-      // backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       borderColor: 'grey',
-      backgroundPosition: 'center bottom',
+      backgroundPosition: 'center',
+      display: 'flex',
+      justifyContent: 'spaceBetween',
     };
+    let cleft = 100;
+    let ctop = 100;
+    let ctrans = `translate('${cleft}px, ${ctop}px')`
+    //`translate('${cleft}px, ${ctop}px')`
+
+    const leftSideChildComponent = {
+      backgroundImage: `url('${this.state.backgroundImage}')`,
+      width: '50%',
+      height: '100%',
+      margin: 'auto',
+      maxWidth: '100%',
+      maxHeight: '100%',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+
+    };
+
+    const middleSideChildComponent = {
+      width: '25%',
+      height: '100%',
+      margin: 'auto',
+      display: 'flex',
+      justifyContent: 'stretch',
+      flexDirection: 'column',
+    };
+
+    const rightSideChildComponent = {
+      width: '25%',
+      height: '100%',
+      margin: 'auto',
+      display: 'flex',
+      justifyContent: 'stretch',
+      flexDirection: 'column',
+    };
+    const pic1 = {
+      backgroundImage: `url('${this.state.currentPictures[3]}')`,
+      width: '100%',
+      height: '100%',
+      margin: 'auto',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+    }
+
+    const pic2 = {
+      backgroundImage: `url('${this.state.currentPictures[2]}')`,
+      width: '100%',
+      height: '100%',
+      margin: 'auto',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+    }
+
+    const pic3 = {
+      backgroundImage: `url('${this.state.currentPictures[6]}')`,
+      width: '100%',
+      height: '100%',
+      margin: 'auto',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+    }
+
+      const pic4 = {
+      backgroundImage: `url('${this.state.currentPictures[9]}')`,
+      width: '100%',
+      height: '100%',
+      margin: 'auto',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+    }
+
 
     return (
       <div style={AppStyle}>
-        <ModalConductor
-          onClick={this.handleBackgroundClick}
-          name={this.state.listingName}
-          currentPictures={this.state.currentPictures}
-          backgroundClicked={this.state.backGroundwasClicked}
-          backgroundImage={this.state.backgroundImage}
-        />
+        <div style={leftSideChildComponent}>
+          <ModalConductor
+            onClick={this.handleBackgroundClick}
+            name={this.state.listingName}
+            currentPictures={this.state.currentPictures}
+            backgroundClicked={this.state.backGroundwasClicked}
+            backgroundImage={this.state.backgroundImage}
+
+          />
+        </div>
+        <div style={middleSideChildComponent}>
+          <div style={pic1}></div>
+          <div style={pic2}></div>
+        </div>
+        <div style={rightSideChildComponent}>
+          <div style={pic3}></div>
+          <div style={pic4}></div>
+        </div>
+
       </div>
     );
   }

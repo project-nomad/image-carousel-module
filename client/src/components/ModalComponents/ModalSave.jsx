@@ -1,9 +1,5 @@
 import React from 'react';
 
-const ModalSave = (props) => {
-  if(props.isOpen === false){
-    return null
-  }
   const ModalStyle = {
     borderStyle: 'solid',
     position: 'absolute',
@@ -13,6 +9,7 @@ const ModalSave = (props) => {
     width: '200px',
     height: '350px',
     background: 'rgb(255,255,255)',
+
   };
   const backDropStyle = {
     position: 'absolute',
@@ -23,32 +20,68 @@ const ModalSave = (props) => {
     background: 'grey',
   };
 
-  const reviewStyle = {
-    height: '100px',
-    width: '200px',
-
+  const picture = {
+    width: '100%',
+    height: 'auto',
   };
 
+
+class ModalSave extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentEmails: ['Example.com'],
+      currentEmail: undefined,
+    };
+    this.handleCurrentEmail = this.handleCurrentEmail.bind(this);
+    this.handleAddToCurrentEmails = this.handleAddToCurrentEmails.bind(this);
+  }
+
+  handleCurrentEmail(e) {
+    this.setState({
+      currentEmail: e.target.value,
+    }, console.log(this.state.currentEmail));
+  }
+
+  handleAddToCurrentEmails(e) {
+    e.preventDefault();
+    this.setState({
+      currentEmails: [...this.state.currentEmails, this.state.currentEmail],
+    }, console.log(this.state.currentEmails));
+  }
+
+render(){
   return (
     <div>
       <div style={backDropStyle}></div>
       <div style={ModalStyle}>
-      <h2> Save To List </h2>
-        <input type="input" placeholder="Name your list" borderstyle="solid" /> <br/>
-      <input type="button" value="CANCEL" />
-      <input type="button" value="CREATE" />
-       <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <img  alt="save" style={reviewStyle} />
+      <div>
+        <h2> Save To List </h2>
+      </div>
+      <div>
+        <input type="input" placeholder="add your email" borderstyle="solid" onKeyPress={this.handleCurrentEmail}/> <br/>
+        <input type="button" value="CANCEL" />
+        <input type="button" value="CREATE" onClick={this.handleAddToCurrentEmails} />
+      </div>
+      <div>
+        <img style={picture} src={this.props.currentPictures[10]}/>
+      </div>
+      <div>
+        {
+          this.state.currentEmails.map((email)=>{
+            return (
+              <div>
+                {email}
+              </div>
+              )
+          })
+        }
+      </div>
+
       </div>
     </div>
-  )
+    )
+  }
 }
 
 

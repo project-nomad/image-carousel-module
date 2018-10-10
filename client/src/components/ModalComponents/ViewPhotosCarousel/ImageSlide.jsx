@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactImageMagnify from 'react-image-magnify';
+
 
 const ImageSlide = ({ url }) => {
   //console.log(url)
@@ -10,6 +12,8 @@ const ImageSlide = ({ url }) => {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
+
+
 
   return (
     <div>

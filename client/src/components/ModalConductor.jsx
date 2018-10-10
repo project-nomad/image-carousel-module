@@ -42,20 +42,12 @@ const ViewPhotosStyle = {
   width: '5%',
   left: '93%',
   bottom: '30%',
-  paddingTop: '5px',
-  paddingBottom: '5px',
+  paddingTop: '10px',
+  paddingBottom: '10px',
   paddingRight: '2px',
   paddingLeft: '2px',
 };
-const flexBoxStyle = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-around',
-  paddingTop: '8px',
-  paddingBottom: '8px',
-  paddingLeft: '15px',
-  paddingRight: '15px',
-};
+
 
 class ModalConductor extends React.Component {
   constructor(props) {
@@ -99,7 +91,7 @@ class ModalConductor extends React.Component {
     if (this.state.isModalOpen === true && this.state.currentModal === 'Share') {
       modalChoice = <ModalShare name={this.props.name} />;
     } else if (this.state.isModalOpen === true && this.state.currentModal === 'Save') {
-      modalChoice = <ModalSave />;
+      modalChoice = <ModalSave currentPictures={this.props.currentPictures}/>;
     } else if (this.state.isModalOpen === true && this.state.currentModal === 'ViewPhotos') {
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     } else if (this.props.backgroundClicked === true) {

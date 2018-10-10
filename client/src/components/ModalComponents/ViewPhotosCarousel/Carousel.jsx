@@ -1,14 +1,14 @@
 import React from 'react';
 
+import ReactImageMagnify from 'react-image-magnify';
+
 import Arrow from './Arrow.jsx';
 
 import ImageSlide from './ImageSlide.jsx';
 
-
-
-
-
 const CarouselStyle = {
+  display: 'flex',
+  alignContent: 'column',
   height: '100%',
   margin: '0',
   width: '100%',
@@ -38,39 +38,18 @@ const captionStyles = {
   height: '100px',
   color: 'white',
 };
-const FlexBoxStyle = {
+
+const zoomInStyle = {
+  position: 'fixed',
+  top: '110%',
   width: '100%',
-  position: 'absolute',
-  borderStyle: 'solid',
-  margin: '0 auto',
-  bottom: '-70%',
-};
-const showButtonStyle = {
-  width: '80px',
-  position: 'absolute',
-  bottom: '-20%',
-  right: '-10%',
+  height: '100px',
+  color: 'white',
 };
 
-const hideButtonStyle = {
-  width: '80px',
-  position: 'absolute',
-  bottom: '250%',
-  right: '-10%',
-};
 
-const upArrowStyle = {
-  width: '10px',
-  height: '10px',
-};
 
-const hideFlexStyle = {
-  height: '0px',
-};
 
-const transitionsStyle = {
-  transitions: '3s',
-};
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -115,22 +94,30 @@ class Carousel extends React.Component {
     }
   }
 
-  render() {
-    let showBox = null;
 
+
+  render(){
+    let showBox = null;
 
     return (
       <div>
-        <div className="Carousel" style={CarouselStyle}>
+        <div className="Carousel">
           <div style={CarouselStyle}>
-            <ImageSlide url={this.props.currentPictures[this.state.currentImageIndex][0]} />
+            <div>
+              <ImageSlide url={this.props.currentPictures[this.state.currentImageIndex][0]} />
+            </div>
           </div>
-          <div style={ArrowLeft}>
+
+
+          <div style={ArrowLeft} onClick={this.previousSlide}>
             <Arrow
               direction="left"
               clickFunction={this.previousSlide}
             />
+
           </div>
+
+
           <div style={ArrowRight}>
             <Arrow
               direction="right"
