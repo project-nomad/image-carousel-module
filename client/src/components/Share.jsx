@@ -1,9 +1,36 @@
 const React = require('react');
 
-const Share = () => {
+const buttonStyle = {
+  color: 'white',
+
+};
+
+const shareStyle = {
+  width: '15px',
+  height: '12px',
+  marginRight: '7px',
+  justifyContent: 'center',
+};
+
+const flexBoxStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  paddingTop: '8px',
+  paddingBottom: '8px',
+  paddingLeft: '15px',
+  paddingRight: '15px',
+};
+
+
+
+const Share = (props) => {
   return (
-    <div>
-      <input type="button" value="Share" />
+    <div style={buttonStyle}>
+      <button type="button" value="Share" onClick={props.click} style={flexBoxStyle}>
+          <img style={shareStyle} src='https://s3.amazonaws.com/thenomad1/noun.svg' />
+          SHARE
+      </button>
     </div>
   );
 };

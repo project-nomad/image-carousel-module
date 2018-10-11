@@ -12,17 +12,19 @@ module.exports = {
         test: /\.jsx$/,
         exclude: /node_modules/,
         include: SRC_DIR,
-        use: {
-          loader: 'babel-loader',
-          query: {
-            presets: ['es2015', 'react'],
-          },
-        },
+        use: [
+          {
+            loader: 'babel-loader',
+            query: {
+              presets: ['es2015', 'react'],
+            },
+          }],
       },
     ],
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle-carousel.js',
     path: DIST_DIR,
   },
 };
+

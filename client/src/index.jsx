@@ -1,6 +1,7 @@
-import Save from './components/Save.jsx';
-import ViewPhotos from './components/ViewPhotos.jsx';
-import Share from './components/Share.jsx';
+import ModalConductor from './components/ModalConductor.jsx';
+
+import flickrInfo from '../../public/passwords.js';
+
 
 const React = require('react');
 
@@ -9,72 +10,170 @@ const reactDOM = require('react-dom');
 const axios = require('axios');
 
 // will have to make this background image a img tag evetually
-const AppStyle = {
-  margin: 'auto',
-  maxWidth: '100%',
-  overflow: 'hidden',
-  width: '100%',
-  height: '600px',
-  backgroundImage: `url(${'https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/room45.jpg'})`,
-  borderStyle: 'solid',
-  borderWidth: '2px',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  borderColor: 'grey',
-};
-
-const SaveStyle = {
-  position: 'absolute',
-  right: '-95%',
-  height: '50px',
-  width: '100%',
-};
-
-const ViewPhotosStyle = {
-  position: 'absolute',
-  width: '100%',
-  right: '-3%',
-  bottom: '30%',
-};
-
-const ShareStyle = {
-  position: 'absolute',
-  right: '-90%',
-  height: '50px',
-  width: '100%',
-};
+const listingId = window.location.pathname.split('/')[2];
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      listingName: null,
+      currentPictures: [],
+      backGroundwasClicked: false,
+      backgroundImage: null,
     };
+    this.getData = this.getData.bind(this);
+    this.handleBackgroundClick = this.handleBackgroundClick.bind(this);
   }
+
   componentDidMount() {
-    axios.get('/listings/listingId/5').then((response) => {
-      console.log(response.data);
-    }).catch((error) => {
-      console.log('we didnt send the request', error);
-    });
-    axios.get('listings/listingId/5/pictures').then((response) => {
-      console.log(response.data);
+    this.getData(listingId);
+  }
+
+  getData(id){
+  // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+
+   let urlSession = `https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=${flickrInfo.Key}&gallery_id=72157693170803464&format=json&nojsoncallback=1`
+    axios.get(urlSession).then((response) => {
+      // make cdn for first element; set first element as background image
+      const firstEle = `https://farm${response.data.photos.photo[0].farm}.staticflickr.com/${response.data.photos.photo[0].server}/${response.data.photos.photo[0].id}_${response.data.photos.photo[0].secret}.jpg`
+      this.setState({
+        backgroundImage: firstEle,
+      });
+      response.data.photos.photo.forEach((photo, index)=>{
+        let currCdn =  `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+        this.setState({
+          currentPictures: [...this.state.currentPictures, [currCdn, photo.title]],
+        });
+      });
     }).catch((error) => {
       console.log(error);
     });
   }
 
+  handleBackgroundClick() {
+    if (this.state.backGroundwasClicked === false) {
+      this.setState({
+        backGroundwasClicked: true,
+      });
+    } else if (this.state.backGroundwasClicked === true) {
+      this.setState({
+        backGroundwasClicked: false,
+      })
+    }
+  }
+
   render() {
+    const AppStyle = {
+      width: '100%',
+      height: '600px',
+      borderStyle: 'solid',
+      borderWidth: '5px',
+      backgroundSize: 'cover',
+      borderColor: 'grey',
+      backgroundPosition: 'center',
+      display: 'flex',
+      justifyContent: 'spaceBetween',
+    };
+    let cleft = 100;
+    let ctop = 100;
+    let ctrans = `translate('${cleft}px, ${ctop}px')`
+    //`translate('${cleft}px, ${ctop}px')`
+
+    const leftSideChildComponent = {
+      backgroundImage: `url('${this.state.backgroundImage}')`,
+      width: '50%',
+      height: '100%',
+      margin: 'auto',
+      maxWidth: '100%',
+      maxHeight: '100%',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+
+    };
+
+    const middleSideChildComponent = {
+      width: '25%',
+      height: '100%',
+      margin: 'auto',
+      display: 'flex',
+      justifyContent: 'stretch',
+      flexDirection: 'column',
+    };
+
+    const rightSideChildComponent = {
+      width: '25%',
+      height: '100%',
+      margin: 'auto',
+      display: 'flex',
+      justifyContent: 'stretch',
+      flexDirection: 'column',
+    };
+    const pic1 = {
+      backgroundImage: `url('${this.state.currentPictures[3]}')`,
+      width: '100%',
+      height: '100%',
+      margin: 'auto',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+    }
+
+    const pic2 = {
+      backgroundImage: `url('${this.state.currentPictures[2]}')`,
+      width: '100%',
+      height: '100%',
+      margin: 'auto',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+    }
+
+    const pic3 = {
+      backgroundImage: `url('${this.state.currentPictures[6]}')`,
+      width: '100%',
+      height: '100%',
+      margin: 'auto',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+    }
+
+      const pic4 = {
+      backgroundImage: `url('${this.state.currentPictures[9]}')`,
+      width: '100%',
+      height: '100%',
+      margin: 'auto',
+      overflow: 'hidden',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      paddingBottom: 'auto',
+    }
+
+
     return (
       <div style={AppStyle}>
-        <div style={SaveStyle}>
-          <Save />
+        <div style={leftSideChildComponent}>
+          <ModalConductor
+            onClick={this.handleBackgroundClick}
+            name={this.state.listingName}
+            currentPictures={this.state.currentPictures}
+            backgroundClicked={this.state.backGroundwasClicked}
+            backgroundImage={this.state.backgroundImage}
+
+          />
         </div>
-        <div style={ViewPhotosStyle}>
-          <ViewPhotos />
+        <div style={middleSideChildComponent}>
+          <div style={pic1}></div>
+          <div style={pic2}></div>
         </div>
-        <div style={ShareStyle}>
-          <Share />
+        <div style={rightSideChildComponent}>
+          <div style={pic3}></div>
+          <div style={pic4}></div>
         </div>
 
       </div>
@@ -82,4 +181,4 @@ class App extends React.Component {
   }
 }
 
-reactDOM.render(<App />, document.getElementById('App'));
+reactDOM.render(<App />, document.getElementById('carousel-module'));
