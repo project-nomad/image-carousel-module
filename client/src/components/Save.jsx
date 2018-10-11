@@ -11,7 +11,7 @@ const imageStyle = {
    marginRight: '10px',
   // marginLeft: '5px',
 };
-``
+
 const textStyle = {
   width: "20px",
   height: "20px",
@@ -51,19 +51,11 @@ class Save extends React.Component {
           onClick={this.props.click}
           style={flexBoxStyle}
         >
-<<<<<<< HEAD
+
         <div>
           <img style={imageStyle} src="https://s3.amazonaws.com/thenomad1/iconmonstr-heart-thin-24.png" />
         </div>
-
           SAVE
-
-
-
-=======
-          <img style={imageStyle} src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/heart.png" alt="save" />
-        Save
->>>>>>> 2adc3d172b04f070324f741fafb16b157e3c14fc
         </button>
       </div>
     );

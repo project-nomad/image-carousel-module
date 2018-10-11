@@ -27,7 +27,7 @@ class App extends React.Component {
     this.getData(listingId);
   }
 
-<<<<<<< HEAD
+
   getData(id){
   // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 
@@ -43,25 +43,6 @@ class App extends React.Component {
         this.setState({
           currentPictures: [...this.state.currentPictures, [currCdn, photo.title]],
         });
-=======
-  async getData (id) {
-    try {
-      const name = await axios.get(`/listings/${id}`)
-        .then(response => response.data[0].name);
-
-      const pictures = await axios.get(`/listings/${id}/pictures`)
-      .then(response => response.data);
-
-      this.setState({
-        listingName: name,
-        currentPictures: pictures,
-        backgroundImage: pictures[0].src,
->>>>>>> 2adc3d172b04f070324f741fafb16b157e3c14fc
-      });
-    } catch(err) {
-      console.error(err);
-    }
-  }
 
   handleBackgroundClick() {
     this.setState({
@@ -73,7 +54,6 @@ class App extends React.Component {
     const AppStyle = {
       width: '100%',
       height: '600px',
-<<<<<<< HEAD
       borderStyle: 'solid',
       borderWidth: '5px',
       backgroundSize: 'cover',
@@ -99,10 +79,6 @@ class App extends React.Component {
       backgroundSize: 'cover',
       paddingBottom: 'auto',
 
-=======
-      backgroundSize: 'cover',
-      backgroundPosition: 'center bottom',
->>>>>>> 2adc3d172b04f070324f741fafb16b157e3c14fc
     };
 
     const middleSideChildComponent = {
