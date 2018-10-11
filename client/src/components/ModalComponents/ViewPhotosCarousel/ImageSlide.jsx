@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactImageMagnify from 'react-image-magnify';
 
 
 const ImageSlide = ({ url }) => {

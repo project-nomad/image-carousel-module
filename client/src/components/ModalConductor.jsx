@@ -91,7 +91,7 @@ class ModalConductor extends React.Component {
     if (this.state.isModalOpen === true && this.state.currentModal === 'Share') {
       modalChoice = <ModalShare name={this.props.name} />;
     } else if (this.state.isModalOpen === true && this.state.currentModal === 'Save') {
-      modalChoice = <ModalSave currentPictures={this.props.currentPictures}/>;
+      modalChoice = <ModalSave pictures={this.props.currentPictures}/>;
     } else if (this.state.isModalOpen === true && this.state.currentModal === 'ViewPhotos') {
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     } else if (this.props.backgroundClicked === true) {

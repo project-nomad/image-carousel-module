@@ -1,5 +1,7 @@
 import React from 'React';
 
+import ReactImageMagnify from 'react-image-magnify';
+
 
 const Arrow = ({ direction, clickFunction}) => {
   let icon = null;
