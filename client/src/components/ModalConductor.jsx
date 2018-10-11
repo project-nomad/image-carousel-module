@@ -15,18 +15,19 @@ import ModalViewPhotos from './ModalComponents/ModalViewPhotos.jsx';
 
 const SaveStyle = {
   position: 'absolute',
-  right: '13%',
+  right: '4%',
   height: '60px',
-  width: '60px',
+  width: '80px',
   bottom: '85%',
 };
 
 const ShareStyle = {
   position: 'absolute',
-  right: '4%',
+  right: '13%',
   height: '60px',
   width: '80px',
   bottom: '85%',
+
 };
 
 const ExitStyle = {
@@ -40,12 +41,17 @@ const ExitStyle = {
 const ViewPhotosStyle = {
   position: 'absolute',
   width: '5%',
+<<<<<<< HEAD
   left: '93%',
   bottom: '30%',
   paddingTop: '10px',
   paddingBottom: '10px',
   paddingRight: '2px',
   paddingLeft: '2px',
+=======
+  right: '93%',
+  bottom: '10%',
+>>>>>>> 2adc3d172b04f070324f741fafb16b157e3c14fc
 };
 
 
@@ -85,18 +91,25 @@ class ModalConductor extends React.Component {
       isModalOpen: false,
     });
   }
-
-  render() {
+  renderModal() {
     let modalChoice = null;
     if (this.state.isModalOpen === true && this.state.currentModal === 'Share') {
       modalChoice = <ModalShare name={this.props.name} />;
     } else if (this.state.isModalOpen === true && this.state.currentModal === 'Save') {
+<<<<<<< HEAD
       modalChoice = <ModalSave pictures={this.props.currentPictures}/>;
     } else if (this.state.isModalOpen === true && this.state.currentModal === 'ViewPhotos') {
+=======
+      modalChoice = <ModalSave />;
+    } else if (this.state.isModalOpen === true && this.state.currentModal === 'View Photos') {
+>>>>>>> 2adc3d172b04f070324f741fafb16b157e3c14fc
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     } else if (this.props.backgroundClicked === true) {
       modalChoice = <ModalViewPhotos currentPictures={this.props.currentPictures} />;
     }
+    return modalChoice;
+  }
+  render() {
     return (
       <div width="100%" position="absolute">
         <div style={ViewPhotosStyle}>
@@ -105,10 +118,14 @@ class ModalConductor extends React.Component {
         <div style={SaveStyle}>
           <Save click={this.handleModalClick} />
         </div>
+<<<<<<< HEAD
         <div style={ShareStyle} >
           <Share click={this.handleModalClick} />
         </div>
         {modalChoice}
+=======
+        {this.renderModal()}
+>>>>>>> 2adc3d172b04f070324f741fafb16b157e3c14fc
         <div style={ExitStyle} onClick={this.handleExitClick} value="exit">
           X
         </div>

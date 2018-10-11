@@ -37,14 +37,12 @@ class Save extends React.Component {
     this.handleSaveClick = this.handleSaveClick.bind(this)
   }
   handleSaveClick() {
-
     this.setState({
       saveIconWasClicked: true,
     });
   }
 
   render() {
-
     return (
       <div style={buttonStyle}>
         <button
@@ -53,6 +51,7 @@ class Save extends React.Component {
           onClick={this.props.click}
           style={flexBoxStyle}
         >
+<<<<<<< HEAD
         <div>
           <img style={imageStyle} src="https://s3.amazonaws.com/thenomad1/iconmonstr-heart-thin-24.png" />
         </div>
@@ -61,6 +60,10 @@ class Save extends React.Component {
 
 
 
+=======
+          <img style={imageStyle} src="https://s3-us-west-1.amazonaws.com/projectnomadhrsf96/heart.png" alt="save" />
+        Save
+>>>>>>> 2adc3d172b04f070324f741fafb16b157e3c14fc
         </button>
       </div>
     );
